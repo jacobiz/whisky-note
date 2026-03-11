@@ -1,50 +1,131 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+SYNC IMPACT REPORT
+==================
+Version change: (none) → 1.0.0  (初版策定)
+Version bump type: MINOR — 新規原則5件・セクション追加
+
+Modified principles:
+  - (なし — 初版のため変更元なし)
+
+Added sections:
+  - I. ローカルファースト
+  - II. テストファースト
+  - III. シンプル設計
+  - IV. モバイル最適化
+  - V. 日本語コミュニケーション
+  - 技術スタック制約
+  - 開発ワークフロー
+  - Governance
+
+Templates requiring updates:
+  - ✅ .specify/templates/plan-template.md — Constitution Check の内容はこの憲法に準拠
+  - ✅ .specify/templates/spec-template.md — ローカルデータ・モバイル要件を念頭に使用すること
+  - ✅ .specify/templates/tasks-template.md — テストファースト原則に従いテストタスクを必須扱いとする
+
+Deferred TODOs:
+  - なし
+-->
+
+# whisky-note Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. ローカルファースト
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+ユーザーデータはすべてデバイス内にのみ保存する。外部サーバーへの送信・同期は行わない。
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+- テイスティングノート・コレクション・設定はすべてデバイスローカル（IndexedDB / localStorage）に保存する
+- クラウド同期・外部 API へのデータ送信を行う機能を追加してはならない
+- オフライン状態でもアプリのすべての主要機能が動作しなければならない（MUST）
+- サードパーティ製分析・トラッキングサービスの導入を禁止する
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+**理由**: ユーザーのプライバシー保護と、ネットワーク環境に依存しない信頼性の確保。
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### II. テストファースト（NON-NEGOTIABLE）
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+実装の前にテストを書く。これは交渉不可の原則である。
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+- TDD サイクル（Red → Green → Refactor）を厳守する
+- テストが存在しない機能を本番コードとして認めない
+- 新機能の実装順序: テスト作成 → テストの失敗確認 → 実装 → テスト通過確認
+- ユーザーストーリーごとに独立してテスト可能な受け入れ条件を定義しなければならない（MUST）
+- UI コンポーネント・ビジネスロジック・データ永続化の各レイヤーにテストを設ける
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+**理由**: 後付けテストでは発見できない設計上の欠陥を早期に検出し、リファクタリングの安全網とする。
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+### III. シンプル設計
+
+現在の要件を満たす最小限の設計を選ぶ。将来の拡張性のための抽象化を先行して導入しない。
+
+- YAGNI（You Aren't Gonna Need It）を徹底する
+- 1箇所でしか使わないコードをユーティリティ・ヘルパーとして切り出さない
+- 3行以上の類似コードが生じたときにのみ抽象化を検討する
+- Repository パターン・ファクトリー・DI コンテナ等の重量級パターンは明確な必要性が生じるまで導入しない
+- 複雑さを導入する場合は plan.md の Complexity Tracking に理由を記録しなければならない（MUST）
+
+**理由**: 過度な抽象化は読解コストを高め、変更を困難にする。シンプルなコードは保守しやすい。
+
+### IV. モバイル最適化
+
+このアプリはモバイルデバイス（スマートフォン）での利用を主用途とする PWA である。
+
+- モバイルファーストでデザイン・実装する（デスクトップは二次的考慮）
+- タッチ操作（タップ・スワイプ・ピンチ）を主インタラクションとして設計する
+- PWA マニフェストおよび Service Worker によるオフライン対応を必須とする（MUST）
+- Core Web Vitals（LCP < 2.5s、FID < 100ms、CLS < 0.1）を満たさなければならない（MUST）
+- ホーム画面へのインストール（Add to Home Screen）に対応しなければならない（MUST）
+- 画面サイズ: 375px 幅（iPhone SE 相当）を最小サポートターゲットとする
+
+**理由**: ウィスキーのテイスティングはバー・酒屋・イベント会場など外出先で行われることが多く、
+スマートフォンでの快適な操作性がアプリの価値を決定する。
+
+### V. 日本語コミュニケーション
+
+エージェント（AI）との応対・ドキュメント・コメントはすべて日本語を基本とする。
+
+- エージェントへの指示・質問・レビュー依頼は日本語で行う
+- エージェントの返答は日本語で行われなければならない（MUST）
+- コードのインラインコメントは日本語で記述する（英語 API / ライブラリ名はそのまま可）
+- 仕様書（spec.md）・計画書（plan.md）・タスクリスト（tasks.md）は日本語で記述する
+- コミットメッセージは日本語プレフィクス形式を推奨する（例: `feat: テイスティングノート記録機能を追加`）
+
+**理由**: 開発者・利用者ともに日本語を母語とする環境での利用を前提とし、
+コミュニケーションコストを最小化する。
+
+## 技術スタック制約
+
+このセクションはプロジェクト全体を通じて有効な技術的制約を定める。
+
+- **プラットフォーム**: PWA（Progressive Web App）
+- **データストア**: IndexedDB（ライブラリは Dexie.js 等を検討）— 外部 DB 禁止
+- **フレームワーク**: フロントエンド SPA（React / Vue / Svelte のいずれか — 機能設計フェーズで決定）
+- **テストフレームワーク**: Vitest または Jest + Testing Library
+- **ビルドツール**: Vite（推奨）
+- **パッケージマネージャー**: npm（package-lock.json を必ずコミットする）
+- **ブラウザサポート**: モダンブラウザ最新2バージョン（Chrome / Safari / Firefox）
+- **外部通信**: 禁止（CDN からのライブラリ読み込みを除く静的ホスティングのみ許可）
+
+## 開発ワークフロー
+
+- **ブランチ戦略**: `main`（本番相当）/ `feature/###-name` / `fix/###-name`
+- **PR ルール**: セルフレビュー可。マージ前にすべてのテストが通過していること（MUST）
+- **コミット粒度**: 1タスク = 1コミットを目安とする
+- **テスト実行**: すべての PR で `npm test` が通過することをゲート条件とする
+- **PWA 検証**: Lighthouse PWA スコア 90 以上を目標とし、機能完成時に計測する
+- **憲法違反の報告**: 実装中に原則との矛盾を発見した場合、plan.md の Complexity Tracking に記録し
+  ユーザーに報告してから進める
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+この憲法はプロジェクトの他のすべての慣行・ガイドラインより優先される。
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+- 原則の追加・変更・削除には憲法の改訂が必要であり、CONSTITUTION_VERSION を更新しなければならない（MUST）
+- バージョニングポリシー:
+  - MAJOR: 既存原則の削除または根本的な再定義
+  - MINOR: 新原則の追加または既存原則の大幅な拡充
+  - PATCH: 表現の明確化・誤字修正・非本質的な改善
+- すべての仕様・計画・タスクは、作成前にこの憲法との整合性を確認しなければならない（MUST）
+- 複雑さの正当化: 原則 III（シンプル設計）に反する実装を行う場合は
+  plan.md の Complexity Tracking テーブルへの記録を必須とする
+
+**Version**: 1.0.0 | **Ratified**: 2026-03-11 | **Last Amended**: 2026-03-11
