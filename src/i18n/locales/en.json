@@ -73,7 +73,11 @@
     "languageJa": "日本語",
     "languageEn": "English",
     "privacyPolicy": "Privacy Policy",
+    "privacyPolicyP1": "This app stores all data locally on your device. No data is sent to or collected by external servers.",
+    "privacyPolicyP2": "All tasting notes and images are stored only in IndexedDB (browser storage) and are never transferred externally over the internet.",
+    "privacyPolicyP3": "This app is a PWA (Progressive Web App) that works offline, designed with your privacy as the top priority.",
     "licenses": "Licenses",
+    "librariesDescription": "This app uses the following open-source libraries.",
     "information": "Information"
   }
 }

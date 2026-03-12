@@ -26,11 +26,12 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
-import { useRouter, useRoute, onBeforeRouteLeave } from 'vue-router'
+import { ref, onMounted } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import { useNotesStore } from '@/stores/notes'
-import { db } from '@/db'
+import { useBottleImage } from '@/composables/useBottleImage'
+import { useUnsavedChangesGuard } from '@/composables/useUnsavedChangesGuard'
 import AppHeader from '@/components/AppHeader.vue'
 import NoteForm from '@/components/NoteForm.vue'
 import type { TastingNote } from '@/db/types'
@@ -39,12 +40,13 @@ const router = useRouter()
 const route = useRoute()
 const { t } = useI18n()
 const notesStore = useNotesStore()
+const { imageUrl: existingImageUrl, loadImage } = useBottleImage()
 
 const note = ref<TastingNote | null>(null)
 const loading = ref(true)
-const existingImageUrl = ref<string | null>(null)
 const isDirty = ref(false)
-let objectUrl: string | null = null
+
+useUnsavedChangesGuard(isDirty)
 
 onMounted(async () => {
   const id = route.params.id as string
@@ -58,21 +60,7 @@ onMounted(async () => {
   loading.value = false
 
   if (note.value?.imageId) {
-    const img = await db.bottleImages.get(note.value.imageId)
-    if (img) {
-      objectUrl = URL.createObjectURL(img.blob)
-      existingImageUrl.value = objectUrl
-    }
-  }
-})
-
-onUnmounted(() => {
-  if (objectUrl) URL.revokeObjectURL(objectUrl)
-})
-
-onBeforeRouteLeave(() => {
-  if (isDirty.value) {
-    return window.confirm(t('common.discardChanges'))
+    await loadImage(note.value.imageId)
   }
 })
 

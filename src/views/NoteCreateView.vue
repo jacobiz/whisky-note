@@ -12,10 +12,11 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import { useRouter, onBeforeRouteLeave } from 'vue-router'
+import { useRouter } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import { useNotesStore } from '@/stores/notes'
 import { useDraftStore } from '@/stores/draft'
+import { useUnsavedChangesGuard } from '@/composables/useUnsavedChangesGuard'
 import AppHeader from '@/components/AppHeader.vue'
 import NoteForm from '@/components/NoteForm.vue'
 import type { TastingNote } from '@/db/types'
@@ -28,16 +29,12 @@ const draftStore = useDraftStore()
 const draftData = ref<Partial<TastingNote>>({})
 const isDirty = ref(false)
 
+useUnsavedChangesGuard(isDirty)
+
 onMounted(async () => {
   await draftStore.loadDraft()
-  if (draftStore.draft) {
-    draftData.value = draftStore.draft
-  }
-})
-
-onBeforeRouteLeave(() => {
-  if (isDirty.value) {
-    return window.confirm(t('common.discardChanges'))
+  if (draftStore.currentDraft) {
+    draftData.value = draftStore.currentDraft.data
   }
 })
 

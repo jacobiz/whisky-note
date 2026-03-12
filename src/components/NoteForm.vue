@@ -115,7 +115,7 @@
 </template>
 
 <script setup lang="ts">
-import { reactive, ref, watch } from 'vue'
+import { reactive, ref, watch, onUnmounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useDraftStore } from '@/stores/draft'
 import TextareaField from './TextareaField.vue'
@@ -153,10 +153,17 @@ const form = reactive<Partial<Omit<TastingNote, 'id' | 'createdAt' | 'updatedAt'
 
 const errors = reactive({ brandName: '', rating: '' })
 
-// 入力変更時に下書き自動保存・変更通知
-watch(form, async (newVal) => {
-  await draftStore.saveDraft(newVal)
+// 入力変更時に変更通知（即時）＋下書き自動保存（500ms デバウンス）
+let saveTimer: ReturnType<typeof setTimeout> | null = null
+
+watch(form, (newVal) => {
   emit('change')
+  if (saveTimer) clearTimeout(saveTimer)
+  saveTimer = setTimeout(() => { draftStore.saveDraft(newVal) }, 500)
+})
+
+onUnmounted(() => {
+  if (saveTimer) clearTimeout(saveTimer)
 })
 
 function validate(): boolean {

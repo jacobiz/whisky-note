@@ -73,7 +73,11 @@
     "languageJa": "日本語",
     "languageEn": "English",
     "privacyPolicy": "プライバシーポリシー",
+    "privacyPolicyP1": "このアプリは、すべてのデータをお使いのデバイス上にローカル保存します。外部サーバーへのデータ送信や収集は一切行いません。",
+    "privacyPolicyP2": "入力されたテイスティングノート・画像データはIndexedDB（ブラウザ内ストレージ）にのみ保存され、インターネット経由で外部に転送されることはありません。",
+    "privacyPolicyP3": "本アプリはオフライン環境でも動作するPWA（Progressive Web App）であり、ユーザーのプライバシーを最優先に設計されています。",
     "licenses": "ライセンス",
+    "librariesDescription": "このアプリは以下のオープンソースライブラリを使用しています。",
     "information": "情報"
   }
 }

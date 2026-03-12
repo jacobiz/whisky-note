@@ -4,8 +4,7 @@
 
     <main class="p-4 space-y-4 pb-safe">
       <section class="bg-surface-elevated border border-gold-muted rounded-xl p-4 space-y-3">
-        <h2 class="text-sm font-medium text-gold uppercase tracking-wider">{{ t('settings.licenses') }}</h2>
-        <p class="text-xs text-ink-muted">このアプリは以下のオープンソースライブラリを使用しています。</p>
+        <p class="text-xs text-ink-muted">{{ t('settings.librariesDescription') }}</p>
         <ul class="space-y-2">
           <li v-for="lib in libraries" :key="lib.name" class="flex justify-between items-center">
             <span class="text-ink-primary font-medium">{{ lib.name }}</span>

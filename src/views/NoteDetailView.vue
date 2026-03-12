@@ -82,11 +82,11 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import { useNotesStore } from '@/stores/notes'
-import { db } from '@/db'
+import { useBottleImage } from '@/composables/useBottleImage'
 import AppHeader from '@/components/AppHeader.vue'
 import DeleteConfirmDialog from '@/components/DeleteConfirmDialog.vue'
 import type { TastingNote } from '@/db/types'
@@ -106,12 +106,11 @@ const router = useRouter()
 const route = useRoute()
 const { t } = useI18n()
 const notesStore = useNotesStore()
+const { imageUrl: thumbnailUrl, loadImage } = useBottleImage()
 
 const note = ref<TastingNote | null>(null)
 const loading = ref(true)
 const showDeleteDialog = ref(false)
-const thumbnailUrl = ref<string | null>(null)
-let objectUrl: string | null = null
 
 onMounted(async () => {
   const id = route.params.id as string
@@ -125,16 +124,8 @@ onMounted(async () => {
   loading.value = false
 
   if (note.value?.imageId) {
-    const img = await db.bottleImages.get(note.value.imageId)
-    if (img) {
-      objectUrl = URL.createObjectURL(img.blob)
-      thumbnailUrl.value = objectUrl
-    }
+    await loadImage(note.value.imageId)
   }
-})
-
-onUnmounted(() => {
-  if (objectUrl) URL.revokeObjectURL(objectUrl)
 })
 
 const formattedDate = computed(() => {
