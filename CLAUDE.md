@@ -68,3 +68,10 @@ npm run format       # Prettier
 - **機能仕様（001）**: `specs/001-tasting-note-record/` — spec.md / plan.md / data-model.md / research.md
 - **ウィスキーテイスティング知識ベース**: `docs/whisky-tasting.md` / `docs/whisky-tasting-en.md`
 - **Speckit コマンド定義**: `.claude/commands/`
+
+## Active Technologies
+- TypeScript 5.x / Vue 3 (Composition API) + Vue 3, Tailwind CSS 3.4（`aspect-[2/3]`, `line-clamp-2` 組み込み済み）, Dexie.js 4（IndexedDB） (002-note-list-portrait-layout)
+- IndexedDB（既存 - BottleImage の読み込みのみ） (002-note-list-portrait-layout)
+
+## Recent Changes
+- 002-note-list-portrait-layout: Added TypeScript 5.x / Vue 3 (Composition API) + Vue 3, Tailwind CSS 3.4（`aspect-[2/3]`, `line-clamp-2` 組み込み済み）, Dexie.js 4（IndexedDB）

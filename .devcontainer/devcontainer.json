@@ -2,12 +2,7 @@
   "name": "whisky-note",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
   "forwardPorts": [5173],
-  "mounts": [
-    "source=${localEnv:HOME}/.claude,target=/tmp/host-claude,type=bind,readonly"
-  ],
-  "containerEnv": {
-    "GITHUB_TOKEN": "${localEnv:GITHUB_TOKEN}"
-  },
+  "mounts": ["source=${localEnv:HOME}/.claude,target=/tmp/host-claude,type=bind,readonly"],
   "postCreateCommand": "bash .devcontainer/post-create.sh",
   "customizations": {
     "vscode": {

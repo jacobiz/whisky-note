@@ -45,4 +45,12 @@ describe('NoteList', () => {
     expect(screen.getByText('山崎12年')).toBeInTheDocument()
     expect(screen.getByText('白州18年')).toBeInTheDocument()
   })
+
+  it('ノートが存在するとき、grid-cols-2 クラスを持つ要素が存在しないこと（1列レイアウト確認）', () => {
+    const { container } = render(NoteList, {
+      props: { notes: [mockNote()] },
+      global: { plugins: [createTestingPinia(), i18n] },
+    })
+    expect(container.querySelector('.grid-cols-2')).toBeNull()
+  })
 })
