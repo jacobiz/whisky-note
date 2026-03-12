@@ -8,7 +8,7 @@
     </div>
 
     <!-- ノート一覧 -->
-    <div v-else class="grid grid-cols-2 gap-3 p-4">
+    <div v-else class="flex flex-col divide-y divide-gold-muted/20 px-4 py-2 space-y-2">
       <NoteCard
         v-for="note in notes"
         :key="note.id"
