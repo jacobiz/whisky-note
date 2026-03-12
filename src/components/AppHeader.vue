@@ -1,5 +1,8 @@
 <template>
-  <header class="sticky top-0 z-10 bg-surface/90 backdrop-blur border-b border-gold-muted px-4 py-3 flex items-center gap-3">
+  <header
+    class="sticky top-0 z-10 bg-surface/90 backdrop-blur border-b border-gold-muted px-4 py-3 flex items-center gap-3"
+    style="padding-top: calc(0.75rem + env(safe-area-inset-top))"
+  >
     <!-- 戻るボタン -->
     <button
       v-if="showBack"

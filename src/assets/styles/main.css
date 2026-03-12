@@ -16,6 +16,21 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
+/* セーフエリア対応ユーティリティ
+   viewport-fit=cover 有効時に iPhone のノッチ・ホームインジケーターを避ける */
+@layer utilities {
+  /* ホームインジケーター分の下余白（既存の p-4 と組み合わせて使用） */
+  .pb-safe {
+    padding-bottom: calc(1rem + env(safe-area-inset-bottom));
+  }
+
+  /* 横向き時の左右セーフエリア（1rem を最低値として確保） */
+  .px-safe {
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+  }
+}
+
 /* スクロールバーのスタイリング */
 ::-webkit-scrollbar {
   width: 4px;

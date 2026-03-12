@@ -3,10 +3,11 @@ import { render, screen } from '@testing-library/vue'
 import { createTestingPinia } from '@pinia/testing'
 import { createI18n } from 'vue-i18n'
 import ja from '@/i18n/locales/ja.json'
+import en from '@/i18n/locales/en.json'
 import NoteList from '@/components/NoteList.vue'
 import type { TastingNote } from '@/db/types'
 
-const i18n = createI18n({ legacy: false, locale: 'ja', messages: { ja } })
+const i18n = createI18n({ legacy: false, locale: 'ja', messages: { ja, en } })
 
 const mockNote = (overrides: Partial<TastingNote> = {}): TastingNote => ({
   id: 'test-id',
@@ -52,5 +53,31 @@ describe('NoteList', () => {
       global: { plugins: [createTestingPinia(), i18n] },
     })
     expect(container.querySelector('.grid-cols-2')).toBeNull()
+  })
+
+  it('isFiltered=true かつ notes が空のとき「該当なし」メッセージを表示する', () => {
+    render(NoteList, {
+      props: { notes: [], isFiltered: true },
+      global: { plugins: [createTestingPinia(), i18n] },
+    })
+    expect(screen.getByText(/該当するノートが見つかりません/)).toBeInTheDocument()
+    expect(screen.getByText(/検索条件を変えてみてください/)).toBeInTheDocument()
+  })
+
+  it('isFiltered=true かつ notes が空のとき「テイスティングノートがまだありません」は表示されない', () => {
+    render(NoteList, {
+      props: { notes: [], isFiltered: true },
+      global: { plugins: [createTestingPinia(), i18n] },
+    })
+    expect(screen.queryByText(/テイスティングノートがまだありません/)).toBeNull()
+  })
+
+  it('isFiltered=false かつ notes が空のとき通常の空状態メッセージを表示する', () => {
+    render(NoteList, {
+      props: { notes: [], isFiltered: false },
+      global: { plugins: [createTestingPinia(), i18n] },
+    })
+    expect(screen.getByText(/テイスティングノートがまだありません/)).toBeInTheDocument()
+    expect(screen.queryByText(/該当するノートが見つかりません/)).toBeNull()
   })
 })

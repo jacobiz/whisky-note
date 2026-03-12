@@ -1,7 +1,14 @@
 <template>
   <div>
-    <!-- 空状態 -->
-    <div v-if="notes.length === 0" class="flex flex-col items-center justify-center py-24 space-y-4">
+    <!-- 空状態: 検索結果なし -->
+    <div v-if="notes.length === 0 && isFiltered" class="flex flex-col items-center justify-center py-24 space-y-4">
+      <div class="text-6xl opacity-20">🔍</div>
+      <p class="text-ink-secondary text-center">{{ t('search.noResults') }}</p>
+      <p class="text-ink-muted text-sm text-center">{{ t('search.noResultsHint') }}</p>
+    </div>
+
+    <!-- 空状態: ノートなし -->
+    <div v-else-if="notes.length === 0" class="flex flex-col items-center justify-center py-24 space-y-4">
       <div class="text-6xl opacity-20">🥃</div>
       <p class="text-ink-secondary text-center">{{ t('common.noNotes') }}</p>
       <p class="text-ink-muted text-sm text-center">{{ t('common.noNotesHint') }}</p>
@@ -25,7 +32,7 @@ import { useRouter } from 'vue-router'
 import NoteCard from './NoteCard.vue'
 import type { TastingNote } from '@/db/types'
 
-defineProps<{ notes: TastingNote[] }>()
+defineProps<{ notes: TastingNote[], isFiltered?: boolean }>()
 
 const { t } = useI18n()
 const router = useRouter()

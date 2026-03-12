@@ -67,6 +67,17 @@
     "confirmButton": "Delete",
     "cancelButton": "Cancel"
   },
+  "search": {
+    "placeholder": "Search by name or distillery",
+    "clearLabel": "Clear search",
+    "noResults": "No notes match your search",
+    "noResultsHint": "Try a different search term",
+    "sortLabel": "Sort by",
+    "sortDateDesc": "Newest first",
+    "sortDateAsc": "Oldest first",
+    "sortRatingDesc": "Highest rated",
+    "sortNameAsc": "Name (A-Z)"
+  },
   "settings": {
     "title": "Settings",
     "language": "Language",

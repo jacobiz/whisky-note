@@ -67,6 +67,17 @@
     "confirmButton": "削除する",
     "cancelButton": "キャンセル"
   },
+  "search": {
+    "placeholder": "銘柄名・蒸留所で検索",
+    "clearLabel": "検索をクリア",
+    "noResults": "該当するノートが見つかりません",
+    "noResultsHint": "検索条件を変えてみてください",
+    "sortLabel": "並び順",
+    "sortDateDesc": "新しい順",
+    "sortDateAsc": "古い順",
+    "sortRatingDesc": "評価が高い順",
+    "sortNameAsc": "銘柄名順"
+  },
   "settings": {
     "title": "設定",
     "language": "表示言語",

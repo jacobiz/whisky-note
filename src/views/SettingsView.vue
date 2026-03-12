@@ -4,7 +4,7 @@
     <AppHeader :title="t('settings.title')" :show-back="true" :show-home="true" />
 
     <!-- 設定一覧 -->
-    <main class="p-4 space-y-6">
+    <main class="p-4 space-y-6 pb-safe">
       <!-- 言語設定 -->
       <section class="bg-surface-elevated border border-gold-muted rounded-xl p-4 space-y-3">
         <h2 class="text-sm font-medium text-ink-secondary uppercase tracking-wider">
