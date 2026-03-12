@@ -70,34 +70,34 @@
 
 ### ImagePicker のテスト（Red → Green）
 
-- [ ] T012 [P] [US2] `tests/components/ImagePicker.test.ts` に「existingImageUrl prop を渡したとき img 要素が表示される」テストを追加する（Red を確認）
-- [ ] T013 [P] [US2] `tests/components/ImagePicker.test.ts` に「画像表示コンテナが縦長アスペクト比（aspect-[2/3] 相当）を持つ」テストを追加する（Red を確認）
-- [ ] T014 [P] [US2] `tests/components/ImagePicker.test.ts` に「削除ボタン（×）をクリックしたとき update:modelValue で null が emit される」テストを追加する（Red を確認）
-- [ ] T015 [P] [US2] `tests/components/ImagePicker.test.ts` に「existingImageUrl がある状態で削除後、img が非表示になる」テストを追加する（Red を確認）
-- [ ] T015b [P] [US2] `tests/components/ImagePicker.test.ts` に「新しい画像を選択後キャンセル（ファイル選択ダイアログを閉じる）した場合、existingImageUrl の画像が維持される」テストを追加する（Red を確認）
+- [x] T012 [P] [US2] `tests/components/ImagePicker.test.ts` に「existingImageUrl prop を渡したとき img 要素が表示される」テストを追加する（Red を確認）
+- [x] T013 [P] [US2] `tests/components/ImagePicker.test.ts` に「画像表示コンテナが縦長アスペクト比（aspect-[2/3] 相当）を持つ」テストを追加する（Red を確認）
+- [x] T014 [P] [US2] `tests/components/ImagePicker.test.ts` に「削除ボタン（×）をクリックしたとき update:modelValue で null が emit される」テストを追加する（Red を確認）
+- [x] T015 [P] [US2] `tests/components/ImagePicker.test.ts` に「existingImageUrl がある状態で削除後、img が非表示になる」テストを追加する（Red を確認）
+- [x] T015b [P] [US2] `tests/components/ImagePicker.test.ts` に「新しい画像を選択後キャンセル（ファイル選択ダイアログを閉じる）した場合、existingImageUrl の画像が維持される」テストを追加する（Red を確認）
 
 ### ImagePicker の実装
 
-- [ ] T016 [US2] `src/components/ImagePicker.vue` に `existingImageUrl?: string | null` prop を追加し、`previewUrl || existingImageUrl` で画像を表示する
-- [ ] T017 [US2] `src/components/ImagePicker.vue` の画像コンテナを `h-48` → `aspect-[2/3] max-w-[180px] mx-auto overflow-hidden rounded-xl` に変更する。`object-cover` → `object-contain` に変更する
-- [ ] T018 [US2] `src/components/ImagePicker.vue` の画像表示時ボタンを変更ボタン（カメラアイコン）と削除ボタン（×）の2ボタン構成に変更する。削除ボタンは既存の `removeImage()` を呼ぶ
+- [x] T016 [US2] `src/components/ImagePicker.vue` に `existingImageUrl?: string | null` prop を追加し、`previewUrl || existingImageUrl` で画像を表示する
+- [x] T017 [US2] `src/components/ImagePicker.vue` の画像コンテナを `h-48` → `aspect-[2/3] max-w-[180px] mx-auto overflow-hidden rounded-xl` に変更する。`object-cover` → `object-contain` に変更する
+- [x] T018 [US2] `src/components/ImagePicker.vue` の画像表示時ボタンを変更ボタン（カメラアイコン）と削除ボタン（×）の2ボタン構成に変更する。削除ボタンは既存の `removeImage()` を呼ぶ
 
 ### NoteForm のテスト（Red → Green）
 
-- [ ] T019 [P] [US2] `tests/components/NoteForm.test.ts` に「initialImageUrl prop が ImagePicker の existingImageUrl に伝播する」テストを追加する（Red を確認）
+- [x] T019 [P] [US2] `tests/components/NoteForm.test.ts` に「initialImageUrl prop が ImagePicker の existingImageUrl に伝播する」テストを追加する（Red を確認）
 
 ### NoteForm の実装
 
-- [ ] T020 [US2] `src/components/NoteForm.vue` に `initialImageUrl?: string | null` prop を追加し、ImagePicker へ `:existing-image-url="initialImageUrl"` として渡す
+- [x] T020 [US2] `src/components/NoteForm.vue` に `initialImageUrl?: string | null` prop を追加し、ImagePicker へ `:existing-image-url="initialImageUrl"` として渡す
 
 ### NoteEditView のテスト（Red → Green）
 
-- [ ] T021 [P] [US2] `tests/views/NoteEditView.test.ts` を新規作成し「imageId を持つノートの編集画面で img が表示される」テストを記述する（Red を確認）
+- [x] T021 [P] [US2] `tests/views/NoteEditView.test.ts` を新規作成し「imageId を持つノートの編集画面で img が表示される」テストを記述する（Red を確認）
 
 ### NoteEditView の実装
 
-- [ ] T022 [US2] `src/views/NoteEditView.vue` の `onMounted` で `imageId` が存在する場合に IndexedDB から blob を取得し `URL.createObjectURL()` で ObjectURL を生成する。`onUnmounted` で `URL.revokeObjectURL()` を呼ぶ
-- [ ] T023 [US2] `src/views/NoteEditView.vue` の NoteForm に `:initial-image-url="existingImageUrl"` を渡す
+- [x] T022 [US2] `src/views/NoteEditView.vue` の `onMounted` で `imageId` が存在する場合に IndexedDB から blob を取得し `URL.createObjectURL()` で ObjectURL を生成する。`onUnmounted` で `URL.revokeObjectURL()` を呼ぶ
+- [x] T023 [US2] `src/views/NoteEditView.vue` の NoteForm に `:initial-image-url="existingImageUrl"` を渡す
 
 **Checkpoint**: ImagePicker・NoteForm・NoteEditView の全テスト（T012〜T021）が Green であること
 
@@ -111,27 +111,27 @@
 
 ### NoteDetailView ナビゲーションのテスト（Red → Green）
 
-- [ ] T024a [P] [US3] `tests/views/NoteDetailView.test.ts` に「ホームアイコンをクリックすると home ルートへ遷移する」テストを追加する（Red を確認）
+- [x] T024a [P] [US3] `tests/views/NoteDetailView.test.ts` に「ホームアイコンをクリックすると home ルートへ遷移する」テストを追加する（Red を確認）
 
 ### NoteEditView ナビゲーション・破棄確認のテスト（Red → Green）
 
-- [ ] T024 [P] [US3] `tests/views/NoteEditView.test.ts` に「AppHeader が表示される」テストを追加する（Red を確認）
-- [ ] T025 [P] [US3] `tests/views/NoteEditView.test.ts` に「フォーム変更後にルート離脱したとき window.confirm が呼ばれる」テストを追加する（vi.spyOn(window, 'confirm') を使用、Red を確認）
+- [x] T024 [P] [US3] `tests/views/NoteEditView.test.ts` に「AppHeader が表示される」テストを追加する（Red を確認）
+- [x] T025 [P] [US3] `tests/views/NoteEditView.test.ts` に「フォーム変更後にルート離脱したとき window.confirm が呼ばれる」テストを追加する（vi.spyOn(window, 'confirm') を使用、Red を確認）
 
 ### NoteEditView ナビゲーションの実装
 
-- [ ] T026 [US3] `src/views/NoteEditView.vue` のヘッダーを `AppHeader` に差し替える（showBack: true、showHome: true）
-- [ ] T027 [US3] `src/views/NoteEditView.vue` に `onBeforeRouteLeave` を追加し、フォームに未保存変更がある場合は `window.confirm(t('common.discardChanges'))` を表示する。キャンセル時はナビゲーションをブロックする
+- [x] T026 [US3] `src/views/NoteEditView.vue` のヘッダーを `AppHeader` に差し替える（showBack: true、showHome: true）
+- [x] T027 [US3] `src/views/NoteEditView.vue` に `onBeforeRouteLeave` を追加し、フォームに未保存変更がある場合は `window.confirm(t('common.discardChanges'))` を表示する。キャンセル時はナビゲーションをブロックする
 
 ### NoteCreateView のテスト（Red → Green）
 
-- [ ] T028 [P] [US3] `tests/views/NoteCreateView.test.ts` を新規作成し「AppHeader が表示される」テストを記述する（Red を確認）
-- [ ] T029 [P] [US3] `tests/views/NoteCreateView.test.ts` に「フォーム入力後にルート離脱したとき window.confirm が呼ばれる」テストを追加する（Red を確認）
+- [x] T028 [P] [US3] `tests/views/NoteCreateView.test.ts` を新規作成し「AppHeader が表示される」テストを記述する（Red を確認）
+- [x] T029 [P] [US3] `tests/views/NoteCreateView.test.ts` に「フォーム入力後にルート離脱したとき window.confirm が呼ばれる」テストを追加する（Red を確認）
 
 ### NoteCreateView の実装
 
-- [ ] T030 [US3] `src/views/NoteCreateView.vue` のヘッダーを `AppHeader` に差し替える（showBack: true、showHome: true）
-- [ ] T031 [US3] `src/views/NoteCreateView.vue` に `onBeforeRouteLeave` を追加し、フォームに入力がある場合は `window.confirm` による破棄確認を表示する
+- [x] T030 [US3] `src/views/NoteCreateView.vue` のヘッダーを `AppHeader` に差し替える（showBack: true、showHome: true）
+- [x] T031 [US3] `src/views/NoteCreateView.vue` に `onBeforeRouteLeave` を追加し、フォームに入力がある場合は `window.confirm` による破棄確認を表示する
 
 **Checkpoint**: 全ナビゲーションテスト（T024〜T029）が Green であること
 
@@ -145,27 +145,27 @@
 
 ### PrivacyPolicyView のテスト（Red → Green）
 
-- [ ] T032 [P] [US4] `tests/views/PrivacyPolicyView.test.ts` を新規作成し「プライバシーポリシーの見出しが表示される」テストを記述する（Red を確認）
-- [ ] T033 [P] [US4] `tests/views/PrivacyPolicyView.test.ts` に「ローカル保存のみ・外部送信なしの説明テキストが存在する」テストを追加する（Red を確認）
+- [x] T032 [P] [US4] `tests/views/PrivacyPolicyView.test.ts` を新規作成し「プライバシーポリシーの見出しが表示される」テストを記述する（Red を確認）
+- [x] T033 [P] [US4] `tests/views/PrivacyPolicyView.test.ts` に「ローカル保存のみ・外部送信なしの説明テキストが存在する」テストを追加する（Red を確認）
 
 ### LicenseView のテスト（Red → Green）
 
-- [ ] T034 [P] [US4] `tests/views/LicenseView.test.ts` を新規作成し「Vue / Pinia / Dexie.js 等のライブラリ名が表示される」テストを記述する（Red を確認）
+- [x] T034 [P] [US4] `tests/views/LicenseView.test.ts` を新規作成し「Vue / Pinia / Dexie.js 等のライブラリ名が表示される」テストを記述する（Red を確認）
 
 ### SettingsView のテスト（Red → Green）
 
-- [ ] T035 [P] [US4] `tests/views/SettingsView.test.ts` を新規作成し「プライバシーポリシーへのナビゲーション項目が存在する」テストを記述する（Red を確認）
-- [ ] T036 [P] [US4] `tests/views/SettingsView.test.ts` に「ライセンスへのナビゲーション項目が存在する」テストを追加する（Red を確認）
+- [x] T035 [P] [US4] `tests/views/SettingsView.test.ts` を新規作成し「プライバシーポリシーへのナビゲーション項目が存在する」テストを記述する（Red を確認）
+- [x] T036 [P] [US4] `tests/views/SettingsView.test.ts` に「ライセンスへのナビゲーション項目が存在する」テストを追加する（Red を確認）
 
 ### ルーターと静的画面の実装
 
-- [ ] T037 [US4] `src/router/index.ts` に `/privacy-policy`（name: `privacy-policy`）と `/licenses`（name: `licenses`）のルートを追加する
-- [ ] T038 [P] [US4] `src/views/PrivacyPolicyView.vue` を新規作成する。AppHeader（title: t('settings.privacyPolicy')、showBack: true、showHome: true）とローカル保存のみ・収集情報なしを明記した静的テキストコンテンツを実装する
-- [ ] T039 [P] [US4] `src/views/LicenseView.vue` を新規作成する。AppHeader（title: t('settings.licenses')）とコード内定数で定義したライブラリ一覧（Vue、Pinia、Vue Router、vue-i18n、Vite、Dexie.js、Tailwind CSS、browser-image-compression、vite-plugin-pwa、Workbox）を表示する実装をする
+- [x] T037 [US4] `src/router/index.ts` に `/privacy-policy`（name: `privacy-policy`）と `/licenses`（name: `licenses`）のルートを追加する
+- [x] T038 [P] [US4] `src/views/PrivacyPolicyView.vue` を新規作成する。AppHeader（title: t('settings.privacyPolicy')、showBack: true、showHome: true）とローカル保存のみ・収集情報なしを明記した静的テキストコンテンツを実装する
+- [x] T039 [P] [US4] `src/views/LicenseView.vue` を新規作成する。AppHeader（title: t('settings.licenses')）とコード内定数で定義したライブラリ一覧（Vue、Pinia、Vue Router、vue-i18n、Vite、Dexie.js、Tailwind CSS、browser-image-compression、vite-plugin-pwa、Workbox）を表示する実装をする
 
 ### SettingsView の実装
 
-- [ ] T040 [US4] `src/views/SettingsView.vue` のヘッダーを `AppHeader` に差し替え、「情報」セクションを追加してプライバシーポリシーと ライセンスへの `router.push` ナビゲーションアイテムを実装する
+- [x] T040 [US4] `src/views/SettingsView.vue` のヘッダーを `AppHeader` に差し替え、「情報」セクションを追加してプライバシーポリシーと ライセンスへの `router.push` ナビゲーションアイテムを実装する
 
 **Checkpoint**: 全 US4 テスト（T032〜T036）が Green であること
 
@@ -175,10 +175,10 @@
 
 **Purpose**: 全ユーザーストーリーに影響する仕上げ作業
 
-- [ ] T041 [P] `npm test -- --run` を実行して全テスト（55件+新規追加分）がパスすることを確認する
-- [ ] T042 [P] `npm run build` を実行してビルドエラーがないことを確認する
-- [ ] T043 i18n キー `common.discardChanges`（変更を破棄しますか？）を `src/i18n/locales/ja.json` と `en.json` に追加する（T001 で未追加の場合）
-- [ ] T044 各フェーズの実装をコミットし `master` ブランチへのマージと GitHub Pages へのデプロイを確認する
+- [x] T041 [P] `npm test -- --run` を実行して全テスト（55件+新規追加分）がパスすることを確認する
+- [x] T042 [P] `npm run build` を実行してビルドエラーがないことを確認する
+- [x] T043 i18n キー `common.discardChanges`（変更を破棄しますか？）を `src/i18n/locales/ja.json` と `en.json` に追加する（T001 で未追加の場合）
+- [x] T044 各フェーズの実装をコミットし `master` ブランチへのマージと GitHub Pages へのデプロイを確認する
 
 ---
 
