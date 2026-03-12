@@ -11,7 +11,9 @@
     "newNote": "New Note",
     "noNotes": "No tasting notes yet",
     "noNotesHint": "Tap the button below to create your first note",
-    "loading": "Loading..."
+    "loading": "Loading...",
+    "home": "Home",
+    "discardChanges": "Discard changes?"
   },
   "notes": {
     "brandName": "Name",
@@ -69,6 +71,9 @@
     "title": "Settings",
     "language": "Language",
     "languageJa": "日本語",
-    "languageEn": "English"
+    "languageEn": "English",
+    "privacyPolicy": "Privacy Policy",
+    "licenses": "Licenses",
+    "information": "Information"
   }
 }

@@ -1,7 +1,7 @@
 <template>
   <form class="space-y-6" @submit.prevent="handleSubmit">
     <!-- ボトル画像 -->
-    <ImagePicker v-model="selectedImage" @update:compressing="isImageCompressing = $event" />
+    <ImagePicker v-model="selectedImage" :existing-image-url="initialImageUrl" @update:compressing="isImageCompressing = $event" />
 
     <!-- 銘柄名（必須） -->
     <div>
@@ -125,10 +125,14 @@ import { TEXT_FIELD_MAX_LENGTH } from '@/db/types'
 
 interface Props {
   initialData?: Partial<TastingNote>
+  initialImageUrl?: string | null
 }
 
-const props = withDefaults(defineProps<Props>(), { initialData: () => ({}) })
-const emit = defineEmits<{ submit: [data: Partial<TastingNote>, imageFile?: File | null] }>()
+const props = withDefaults(defineProps<Props>(), { initialData: () => ({}), initialImageUrl: null })
+const emit = defineEmits<{
+  submit: [data: Partial<TastingNote>, imageFile?: File | null]
+  change: []
+}>()
 
 const { t } = useI18n()
 const draftStore = useDraftStore()
@@ -149,9 +153,10 @@ const form = reactive<Partial<Omit<TastingNote, 'id' | 'createdAt' | 'updatedAt'
 
 const errors = reactive({ brandName: '', rating: '' })
 
-// 入力変更時に下書き自動保存
+// 入力変更時に下書き自動保存・変更通知
 watch(form, async (newVal) => {
   await draftStore.saveDraft(newVal)
+  emit('change')
 })
 
 function validate(): boolean {

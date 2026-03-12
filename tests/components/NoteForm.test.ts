@@ -1,9 +1,14 @@
-import { describe, it, expect } from 'vitest'
+import { describe, it, expect, vi } from 'vitest'
 import { render, screen, fireEvent } from '@testing-library/vue'
 import { createTestingPinia } from '@pinia/testing'
 import { createI18n } from 'vue-i18n'
 import ja from '@/i18n/locales/ja.json'
 import NoteForm from '@/components/NoteForm.vue'
+
+vi.stubGlobal('URL', {
+  createObjectURL: vi.fn().mockReturnValue('blob:mock-url'),
+  revokeObjectURL: vi.fn(),
+})
 
 const i18n = createI18n({ legacy: false, locale: 'ja', messages: { ja } })
 
@@ -40,5 +45,12 @@ describe('NoteForm', () => {
     renderForm()
     // 各テキストエリアに文字数カウンターが存在する
     expect(screen.getAllByText(/0 \/ 1000/).length).toBeGreaterThan(0)
+  })
+
+  it('initialImageUrl prop が ImagePicker の existingImageUrl に伝播する', () => {
+    const { container } = renderForm({ initialImageUrl: 'blob:existing-url' })
+    const img = container.querySelector('img')
+    expect(img).not.toBeNull()
+    expect(img?.getAttribute('src')).toBe('blob:existing-url')
   })
 })

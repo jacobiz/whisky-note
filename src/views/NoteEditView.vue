@@ -1,19 +1,7 @@
 <template>
   <div class="min-h-screen bg-surface">
     <!-- ヘッダー -->
-    <header class="sticky top-0 z-10 bg-surface/90 backdrop-blur border-b border-gold-muted px-4 py-3 flex items-center gap-3">
-      <button
-        type="button"
-        class="p-1 text-ink-secondary hover:text-gold transition-colors"
-        :aria-label="t('common.back')"
-        @click="router.back()"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-        </svg>
-      </button>
-      <h1 class="text-lg font-semibold text-ink-primary">{{ t('common.edit') }}</h1>
-    </header>
+    <AppHeader :title="t('common.edit')" :show-back="true" :show-home="true" />
 
     <!-- ローディング -->
     <div v-if="loading" class="flex items-center justify-center py-24">
@@ -27,16 +15,23 @@
 
     <!-- フォーム -->
     <main v-else class="p-4 pb-safe">
-      <NoteForm :initial-data="note" @submit="handleSubmit" />
+      <NoteForm
+        :initial-data="note"
+        :initial-image-url="existingImageUrl"
+        @submit="handleSubmit"
+        @change="isDirty = true"
+      />
     </main>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
-import { useRouter, useRoute } from 'vue-router'
+import { ref, onMounted, onUnmounted } from 'vue'
+import { useRouter, useRoute, onBeforeRouteLeave } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import { useNotesStore } from '@/stores/notes'
+import { db } from '@/db'
+import AppHeader from '@/components/AppHeader.vue'
 import NoteForm from '@/components/NoteForm.vue'
 import type { TastingNote } from '@/db/types'
 
@@ -47,6 +42,9 @@ const notesStore = useNotesStore()
 
 const note = ref<TastingNote | null>(null)
 const loading = ref(true)
+const existingImageUrl = ref<string | null>(null)
+const isDirty = ref(false)
+let objectUrl: string | null = null
 
 onMounted(async () => {
   const id = route.params.id as string
@@ -58,10 +56,29 @@ onMounted(async () => {
     note.value = notesStore.notes.find(n => n.id === id) ?? null
   }
   loading.value = false
+
+  if (note.value?.imageId) {
+    const img = await db.bottleImages.get(note.value.imageId)
+    if (img) {
+      objectUrl = URL.createObjectURL(img.blob)
+      existingImageUrl.value = objectUrl
+    }
+  }
+})
+
+onUnmounted(() => {
+  if (objectUrl) URL.revokeObjectURL(objectUrl)
+})
+
+onBeforeRouteLeave(() => {
+  if (isDirty.value) {
+    return window.confirm(t('common.discardChanges'))
+  }
 })
 
 async function handleSubmit(data: Partial<TastingNote>, imageFile?: File | null): Promise<void> {
   if (!note.value) return
+  isDirty.value = false
   await notesStore.updateNote(note.value.id, data)
   if (imageFile) {
     await notesStore.saveImage(note.value.id, imageFile)
