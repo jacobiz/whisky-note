@@ -34,3 +34,7 @@ coverage/
 .cache/
 .parcel-cache/
 .eslintcache
+*.tsbuildinfo
+
+# Claude Code (個人設定はコミットしない)
+.claude/settings.local.json
