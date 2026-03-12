@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ダークテーマをデフォルトとして適用（Tailwind CSS class戦略: html要素にdarkクラスを付与） */
+
+
+body {
+  @apply bg-surface text-ink-primary min-h-screen;
+  font-family: system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* タッチ操作の最適化 */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* スクロールバーのスタイリング */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-surface;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-gold-muted rounded-full;
+}
