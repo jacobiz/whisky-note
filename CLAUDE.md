@@ -74,6 +74,8 @@ npm run format       # Prettier
 - IndexedDB（既存 - BottleImage の読み込みのみ） (002-note-list-portrait-layout)
 - TypeScript 5.x + Vue 3 (Composition API), Vue Router 4, vue-i18n v9, Tailwind CSS 3.4, Dexie.js 4 (003-record-ux-polish)
 - IndexedDB（Dexie.js）— 既存スキーマを変更しない (003-record-ux-polish)
+- TypeScript 5.x + Vue 3 (Composition API), Pinia 2, vue-i18n v9 (004-search-sort)
+- IndexedDB (Dexie.js 4) — 既存スキーマを読み取りのみ利用。スキーマ変更なし (004-search-sort)
 
 ## Recent Changes
 - 002-note-list-portrait-layout: Added TypeScript 5.x / Vue 3 (Composition API) + Vue 3, Tailwind CSS 3.4（`aspect-[2/3]`, `line-clamp-2` 組み込み済み）, Dexie.js 4（IndexedDB）
