@@ -89,6 +89,26 @@
     "privacyPolicyP3": "This app is a PWA (Progressive Web App) that works offline, designed with your privacy as the top priority.",
     "licenses": "Licenses",
     "librariesDescription": "This app uses the following open-source libraries.",
-    "information": "Information"
+    "information": "Information",
+    "dataManagement": "Data Management",
+    "exportData": "Export Data",
+    "exportDescription": "Save all notes as a JSON file",
+    "importData": "Import Data",
+    "importDescription": "Load a previously exported JSON file"
+  },
+  "export": {
+    "successMessage": "Export completed",
+    "errorFailed": "Export failed"
+  },
+  "import": {
+    "confirmTitle": "Confirm Import",
+    "confirmMessage": "Add {total} note(s) ({skipped} will be skipped as duplicates). Continue?",
+    "confirmButton": "Add",
+    "cancelButton": "Cancel",
+    "successMessage": "Added {added} note(s) ({skipped} skipped)",
+    "errorInvalidFile": "Invalid export file",
+    "errorUnsupportedVersion": "Unsupported file version",
+    "errorReadFailed": "Failed to read file",
+    "noNotes": "No notes to import"
   }
 }
