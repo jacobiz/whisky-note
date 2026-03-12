@@ -89,6 +89,26 @@
     "privacyPolicyP3": "本アプリはオフライン環境でも動作するPWA（Progressive Web App）であり、ユーザーのプライバシーを最優先に設計されています。",
     "licenses": "ライセンス",
     "librariesDescription": "このアプリは以下のオープンソースライブラリを使用しています。",
-    "information": "情報"
+    "information": "情報",
+    "dataManagement": "データ管理",
+    "exportData": "データをエクスポート",
+    "exportDescription": "全ノートをJSONファイルとして保存",
+    "importData": "データをインポート",
+    "importDescription": "エクスポートしたJSONファイルを読み込む"
+  },
+  "export": {
+    "successMessage": "エクスポートが完了しました",
+    "errorFailed": "エクスポートに失敗しました"
+  },
+  "import": {
+    "confirmTitle": "インポートの確認",
+    "confirmMessage": "{total}件のノートを追加します（{skipped}件は既に存在するためスキップ）。続行しますか？",
+    "confirmButton": "追加する",
+    "cancelButton": "キャンセル",
+    "successMessage": "{added}件のノートを追加しました（{skipped}件スキップ）",
+    "errorInvalidFile": "有効なエクスポートファイルではありません",
+    "errorUnsupportedVersion": "未対応のファイルバージョンです",
+    "errorReadFailed": "ファイルの読み込みに失敗しました",
+    "noNotes": "インポート可能なノートがありません"
   }
 }
