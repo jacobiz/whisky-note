@@ -1,5 +1,5 @@
 {
-  "name": "molkky-score",
+  "name": "whisky-note",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
   "forwardPorts": [5173],
   "mounts": [
@@ -15,6 +15,8 @@
         "esbenp.prettier-vscode",
         "dbaeumer.vscode-eslint",
         "bradlc.vscode-tailwindcss",
+        "Vue.volar",
+        "vitest.explorer",
         "anthropic.claude-code"
       ],
       "settings": {
