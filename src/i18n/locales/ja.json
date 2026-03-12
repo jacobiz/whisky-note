@@ -1,0 +1,74 @@
+{
+  "common": {
+    "save": "保存",
+    "cancel": "キャンセル",
+    "delete": "削除",
+    "edit": "編集",
+    "back": "戻る",
+    "close": "閉じる",
+    "confirm": "確認",
+    "settings": "設定",
+    "newNote": "新規ノート作成",
+    "noNotes": "テイスティングノートがまだありません",
+    "noNotesHint": "右下のボタンからノートを作成しましょう",
+    "loading": "読み込み中..."
+  },
+  "notes": {
+    "brandName": "銘柄名",
+    "distillery": "蒸留所",
+    "vintage": "ヴィンテージ",
+    "appearance": "外観",
+    "nose": "香り",
+    "palate": "味わい",
+    "finish": "余韻",
+    "rating": "総合評価",
+    "notes": "メモ",
+    "photo": "ボトル写真",
+    "recordedAt": "記録日時"
+  },
+  "form": {
+    "brandNamePlaceholder": "例: 山崎12年",
+    "distilleryPlaceholder": "例: サントリー山崎蒸溜所",
+    "vintagePlaceholder": "例: 1990, NAS",
+    "appearancePlaceholder": "色合い、透明度、粘度など",
+    "nosePlaceholder": "最初に感じる香り、奥にある香りなど",
+    "palatePlaceholder": "口に含んだときの第一印象、広がる風味など",
+    "finishPlaceholder": "余韻の長さ、残る風味など",
+    "ratingPlaceholder": "0〜100",
+    "notesPlaceholder": "その他の気づきや特記事項",
+    "addImage": "ボトル写真を追加",
+    "removeImage": "写真を削除",
+    "compressing": "圧縮中...",
+    "addPhoto": "写真を追加",
+    "changePhoto": "写真を変更",
+    "removePhoto": "写真を削除",
+    "takePhoto": "カメラで撮影",
+    "chooseFromLibrary": "フォトライブラリから選択"
+  },
+  "errors": {
+    "brandNameRequired": "銘柄名は必須です",
+    "textTooLong": "{field}は{max}文字以内で入力してください",
+    "ratingOutOfRange": "評価は0〜100の整数で入力してください",
+    "imageLoadFailed": "画像の読み込みに失敗しました",
+    "saveFailed": "保存に失敗しました。もう一度お試しください",
+    "deleteFailed": "削除に失敗しました。もう一度お試しください",
+    "cameraPermissionDenied": "カメラへのアクセスが許可されていません。設定から許可してください",
+    "noteNotFound": "ノートが見つかりません"
+  },
+  "delete": {
+    "title": "ノートを削除",
+    "message": "このテイスティングノートを削除します。この操作は取り消せません。",
+    "confirm": "削除する",
+    "cancel": "キャンセル",
+    "confirmTitle": "ノートを削除",
+    "confirmMessage": "「{brandName}」のテイスティングノートを削除します。この操作は取り消せません。",
+    "confirmButton": "削除する",
+    "cancelButton": "キャンセル"
+  },
+  "settings": {
+    "title": "設定",
+    "language": "表示言語",
+    "languageJa": "日本語",
+    "languageEn": "English"
+  }
+}

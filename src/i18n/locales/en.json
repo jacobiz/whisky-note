@@ -1,0 +1,74 @@
+{
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "back": "Back",
+    "close": "Close",
+    "confirm": "Confirm",
+    "settings": "Settings",
+    "newNote": "New Note",
+    "noNotes": "No tasting notes yet",
+    "noNotesHint": "Tap the button below to create your first note",
+    "loading": "Loading..."
+  },
+  "notes": {
+    "brandName": "Name",
+    "distillery": "Distillery",
+    "vintage": "Vintage",
+    "appearance": "Appearance",
+    "nose": "Nose",
+    "palate": "Palate",
+    "finish": "Finish",
+    "rating": "Rating",
+    "notes": "Notes",
+    "photo": "Bottle Photo",
+    "recordedAt": "Recorded"
+  },
+  "form": {
+    "brandNamePlaceholder": "e.g. Yamazaki 12 Year",
+    "distilleryPlaceholder": "e.g. Suntory Yamazaki Distillery",
+    "vintagePlaceholder": "e.g. 1990, NAS",
+    "appearancePlaceholder": "Colour, clarity, viscosity...",
+    "nosePlaceholder": "First impressions, deeper aromas...",
+    "palatePlaceholder": "First impression, developing flavours...",
+    "finishPlaceholder": "Length, lingering flavours...",
+    "ratingPlaceholder": "0–100",
+    "notesPlaceholder": "Additional observations or remarks",
+    "addImage": "Add Bottle Photo",
+    "removeImage": "Remove photo",
+    "compressing": "Compressing...",
+    "addPhoto": "Add Photo",
+    "changePhoto": "Change Photo",
+    "removePhoto": "Remove Photo",
+    "takePhoto": "Take Photo",
+    "chooseFromLibrary": "Choose from Library"
+  },
+  "errors": {
+    "brandNameRequired": "Name is required",
+    "textTooLong": "{field} must be {max} characters or fewer",
+    "ratingOutOfRange": "Rating must be an integer between 0 and 100",
+    "imageLoadFailed": "Failed to load image",
+    "saveFailed": "Failed to save. Please try again",
+    "deleteFailed": "Failed to delete. Please try again",
+    "cameraPermissionDenied": "Camera access denied. Please allow access in Settings",
+    "noteNotFound": "Note not found"
+  },
+  "delete": {
+    "title": "Delete Note",
+    "message": "Delete this tasting note? This action cannot be undone.",
+    "confirm": "Delete",
+    "cancel": "Cancel",
+    "confirmTitle": "Delete Note",
+    "confirmMessage": "Delete tasting note for \"{brandName}\"? This action cannot be undone.",
+    "confirmButton": "Delete",
+    "cancelButton": "Cancel"
+  },
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "languageJa": "日本語",
+    "languageEn": "English"
+  }
+}
