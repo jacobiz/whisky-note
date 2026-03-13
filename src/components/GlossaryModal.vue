@@ -92,17 +92,26 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useGlossary } from '@/composables/useGlossary'
 import type { GlossaryCategory } from '@/data/glossary'
 
-defineProps<{ visible: boolean }>()
+const props = defineProps<{ visible: boolean }>()
 const emit = defineEmits<{ close: [] }>()
 
 const { t, locale } = useI18n()
 const { filteredTerms, searchQuery, selectedCategory } = useGlossary()
 const activeId = ref<string | null>(null)
+
+// モーダルが開くたびに検索・フィルタ状態をリセットする
+watch(() => props.visible, (visible) => {
+  if (visible) {
+    searchQuery.value = ''
+    selectedCategory.value = null
+    activeId.value = null
+  }
+})
 
 const categories: GlossaryCategory[] = [
   'tasting-process', 'flavour-wheel', 'mouthfeel', 'finish', 'production', 'region', 'general'

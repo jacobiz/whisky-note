@@ -31,13 +31,16 @@ export function useInstallPrompt() {
   window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt)
   window.addEventListener('appinstalled', handleAppInstalled)
 
-  // Vue コンポーネント内のときのみ onUnmounted でクリーンアップする
-  if (getCurrentInstance()) {
-    onUnmounted(() => {
-      window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt)
-      window.removeEventListener('appinstalled', handleAppInstalled)
-    })
+  // イベントリスナーを解除する関数。コンポーネント外で呼ぶ側が明示的に使用する
+  function cleanup() {
+    window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt)
+    window.removeEventListener('appinstalled', handleAppInstalled)
   }
 
-  return { canInstall, isIos, promptInstall }
+  // Vue コンポーネント内のときは onUnmounted で自動クリーンアップする
+  if (getCurrentInstance()) {
+    onUnmounted(cleanup)
+  }
+
+  return { canInstall, isIos, promptInstall, cleanup }
 }
