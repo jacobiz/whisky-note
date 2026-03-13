@@ -78,6 +78,8 @@ npm run format       # Prettier
 - IndexedDB (Dexie.js 4) — 既存スキーマを読み取りのみ利用。スキーマ変更なし (004-search-sort)
 - TypeScript 5.x / Vue 3 (Composition API) + Pinia 2, vue-i18n v9, Dexie.js 4（IndexedDB — 既存） (005-data-import-export)
 - IndexedDB（既存スキーマを読み書きのみ利用。スキーマ変更なし） (005-data-import-export)
+- TypeScript 5.7 + Vue 3.5（Composition API） + Vite 6 + vite-plugin-pwa 0.21（既存）、vue-i18n v9、Pinia 2 (006-pwa-whisky-glossary)
+- IndexedDB（Dexie.js 4）— 本フィーチャーでスキーマ変更なし。辞典データは静的 JSON バンドル (006-pwa-whisky-glossary)
 
 ## Recent Changes
 - 002-note-list-portrait-layout: Added TypeScript 5.x / Vue 3 (Composition API) + Vue 3, Tailwind CSS 3.4（`aspect-[2/3]`, `line-clamp-2` 組み込み済み）, Dexie.js 4（IndexedDB）

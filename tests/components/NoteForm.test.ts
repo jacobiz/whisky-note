@@ -3,6 +3,7 @@ import { render, screen, fireEvent } from '@testing-library/vue'
 import { createTestingPinia } from '@pinia/testing'
 import { createI18n } from 'vue-i18n'
 import ja from '@/i18n/locales/ja.json'
+import en from '@/i18n/locales/en.json'
 import NoteForm from '@/components/NoteForm.vue'
 
 vi.stubGlobal('URL', {
@@ -10,7 +11,7 @@ vi.stubGlobal('URL', {
   revokeObjectURL: vi.fn(),
 })
 
-const i18n = createI18n({ legacy: false, locale: 'ja', messages: { ja } })
+const i18n = createI18n({ legacy: false, locale: 'ja', messages: { ja, en } })
 
 const renderForm = (props = {}) =>
   render(NoteForm, {
@@ -52,5 +53,28 @@ describe('NoteForm', () => {
     const img = container.querySelector('img')
     expect(img).not.toBeNull()
     expect(img?.getAttribute('src')).toBe('blob:existing-url')
+  })
+})
+
+describe('用語辞典モーダル', () => {
+  it('「用語辞典を参照」ボタンが表示される', () => {
+    renderForm()
+    expect(screen.getByText(/用語辞典を参照/)).toBeInTheDocument()
+  })
+
+  it('ボタンクリックで GlossaryModal が表示される', async () => {
+    renderForm()
+    await fireEvent.click(screen.getByText(/用語辞典を参照/))
+    // GlossaryModal の見出しが表示される
+    expect(screen.getByText('用語辞典')).toBeInTheDocument()
+  })
+
+  it('モーダルを閉じてもフォーム値が保持される', async () => {
+    renderForm({ initialData: { brandName: 'テスト銘柄' } })
+    await fireEvent.click(screen.getByText(/用語辞典を参照/))
+    // モーダルを閉じる
+    await fireEvent.click(screen.getByLabelText('閉じる'))
+    // フォーム値が保持されている
+    expect(screen.getByDisplayValue('テスト銘柄')).toBeInTheDocument()
   })
 })

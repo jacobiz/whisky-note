@@ -5,6 +5,30 @@
 
     <!-- 設定一覧 -->
     <main class="p-4 space-y-6 pb-safe">
+      <!-- PWAインストールセクション -->
+      <section
+        v-if="canInstall || isIos"
+        class="bg-surface-elevated border border-gold-muted rounded-xl p-4 space-y-3"
+      >
+        <h2 class="text-sm font-medium text-ink-secondary uppercase tracking-wider">
+          {{ t('install.sectionTitle') }}
+        </h2>
+        <!-- Android: インストールボタン -->
+        <button
+          v-if="canInstall"
+          type="button"
+          class="w-full flex items-center justify-center gap-2 px-4 py-3 bg-gold hover:bg-gold-light
+                 text-surface font-medium rounded-lg transition-colors"
+          @click="promptInstall"
+        >
+          {{ t('install.addToHomeScreen') }}
+        </button>
+        <!-- iOS: 手順案内 -->
+        <p v-if="isIos" class="text-sm text-ink-secondary">
+          {{ t('install.iosGuide') }}
+        </p>
+      </section>
+
       <!-- 言語設定 -->
       <section class="bg-surface-elevated border border-gold-muted rounded-xl p-4 space-y-3">
         <h2 class="text-sm font-medium text-ink-secondary uppercase tracking-wider">
@@ -114,10 +138,12 @@ import LanguageToggle from '@/components/LanguageToggle.vue'
 import ImportConfirmDialog from '@/components/ImportConfirmDialog.vue'
 import { useImportExport } from '@/composables/useImportExport'
 import type { ImportPreview } from '@/composables/useImportExport'
+import { useInstallPrompt } from '@/composables/useInstallPrompt'
 
 const router = useRouter()
 const { t } = useI18n()
 const { isExporting, isImporting, exportData, previewImport, executeImport } = useImportExport()
+const { canInstall, isIos, promptInstall } = useInstallPrompt()
 
 // エクスポート成功フィードバック
 const exportSuccess = ref(false)
