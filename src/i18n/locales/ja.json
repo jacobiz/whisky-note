@@ -110,5 +110,31 @@
     "errorUnsupportedVersion": "未対応のファイルバージョンです",
     "errorReadFailed": "ファイルの読み込みに失敗しました",
     "noNotes": "インポート可能なノートがありません"
+  },
+  "pwa": {
+    "updateAvailable": "新しいバージョンが利用可能です",
+    "reload": "今すぐ更新"
+  },
+  "install": {
+    "sectionTitle": "アプリのインストール",
+    "addToHomeScreen": "ホーム画面に追加",
+    "iosGuide": "Safariの共有ボタン（□↑）→「ホーム画面に追加」をタップ"
+  },
+  "glossary": {
+    "title": "用語辞典",
+    "searchPlaceholder": "用語を検索...",
+    "noResults": "該当する用語が見つかりません",
+    "allCategories": "すべて",
+    "openGlossary": "用語辞典を参照",
+    "close": "閉じる",
+    "categories": {
+      "tasting-process": "テイスティング",
+      "flavour-wheel": "フレーバー",
+      "mouthfeel": "マウスフィール",
+      "finish": "フィニッシュ",
+      "production": "製造・熟成",
+      "region": "産地",
+      "general": "一般"
+    }
   }
 }

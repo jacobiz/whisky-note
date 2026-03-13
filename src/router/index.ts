@@ -35,6 +35,11 @@ const router = createRouter({
       name: 'licenses',
       component: () => import('@/views/LicenseView.vue'),
     },
+    {
+      path: '/glossary',
+      name: 'glossary',
+      component: () => import('@/views/GlossaryView.vue'),
+    },
   ],
 })
 

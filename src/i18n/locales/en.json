@@ -110,5 +110,31 @@
     "errorUnsupportedVersion": "Unsupported file version",
     "errorReadFailed": "Failed to read file",
     "noNotes": "No notes to import"
+  },
+  "pwa": {
+    "updateAvailable": "A new version is available",
+    "reload": "Update now"
+  },
+  "install": {
+    "sectionTitle": "Install App",
+    "addToHomeScreen": "Add to Home Screen",
+    "iosGuide": "Tap the Share button (□↑) → 'Add to Home Screen'"
+  },
+  "glossary": {
+    "title": "Glossary",
+    "searchPlaceholder": "Search terms...",
+    "noResults": "No terms found",
+    "allCategories": "All",
+    "openGlossary": "Open Glossary",
+    "close": "Close",
+    "categories": {
+      "tasting-process": "Tasting Process",
+      "flavour-wheel": "Flavour Wheel",
+      "mouthfeel": "Mouthfeel",
+      "finish": "Finish",
+      "production": "Production",
+      "region": "Region",
+      "general": "General"
+    }
   }
 }

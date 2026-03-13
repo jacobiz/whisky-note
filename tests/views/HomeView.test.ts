@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach } from 'vitest'
-import { render, screen } from '@testing-library/vue'
+import { render, screen, fireEvent } from '@testing-library/vue'
 import { setActivePinia, createPinia } from 'pinia'
 import { createTestingPinia } from '@pinia/testing'
 import { createI18n } from 'vue-i18n'
@@ -20,6 +20,7 @@ const router = createRouter({
     { path: '/note/:id', name: 'note-detail', component: { template: '<div />' } },
     { path: '/note/create', name: 'note-create', component: { template: '<div />' } },
     { path: '/settings', name: 'settings', component: { template: '<div />' } },
+    { path: '/glossary', name: 'glossary', component: { template: '<div />' } },
   ],
 })
 
@@ -176,5 +177,24 @@ describe('HomeView — ソート', () => {
     expect(screen.queryByText('白州12年')).toBeNull()
     const cards = screen.getAllByText(/山崎\d+年/)
     expect(cards[0].textContent).toContain('山崎18年')
+  })
+})
+
+describe('HomeView — 辞典ボタン', () => {
+  beforeEach(() => {
+    setActivePinia(createPinia())
+  })
+
+  it('辞典ボタンが表示される', () => {
+    setup()
+    expect(screen.getByLabelText('用語辞典')).toBeInTheDocument()
+  })
+
+  it('辞典ボタンクリックで /glossary に遷移する', async () => {
+    setup()
+    await router.push('/')
+    await fireEvent.click(screen.getByLabelText('用語辞典'))
+    await new Promise(r => setTimeout(r, 10))
+    expect(router.currentRoute.value.name).toBe('glossary')
   })
 })

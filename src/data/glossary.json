@@ -1,0 +1,813 @@
+{
+  "version": 1,
+  "terms": [
+    {
+      "id": "appearance",
+      "termJa": "外観",
+      "termEn": "Appearance",
+      "category": "tasting-process",
+      "definitionJa": "テイスティングの第一段階。グラスを45度に傾け、白い背景に対してウィスキーの色・透明度・粘度を観察する。色はカスクの種類や熟成期間を示す手がかりになる。",
+      "definitionEn": "The first stage of tasting. Tilt the glass at 45 degrees against a white background and observe the whisky's colour, clarity, and viscosity. Colour provides clues about cask type and maturation length."
+    },
+    {
+      "id": "nose",
+      "termJa": "香り（ノーズ）",
+      "termEn": "Nose",
+      "category": "tasting-process",
+      "definitionJa": "ウィスキーを嗅いで感じる香りの総称。人間の味覚の約80%は嗅覚由来であり、テイスティングの中で最も情報量が多い段階。グラスをゆっくり近づけ、口で息を吸いながら最初の印象を掴む。",
+      "definitionEn": "The aromas perceived by smelling the whisky. Approximately 80% of perceived flavour comes from the sense of smell, making this the most information-rich stage of tasting. Slowly bring the glass to your nose, breathing in through the mouth for the first impression."
+    },
+    {
+      "id": "palate",
+      "termJa": "味わい（パレート）",
+      "termEn": "Palate",
+      "category": "tasting-process",
+      "definitionJa": "ウィスキーを口に含んだときに感じる風味。少量を口に含み、舌全体に広げて15〜30秒保持する。マウスフィール・アタック・展開・バランスを評価する。",
+      "definitionEn": "The flavours perceived in the mouth. Take a small sip and spread it across the entire tongue, holding for 15–30 seconds. Assess mouthfeel, attack, development, and balance."
+    },
+    {
+      "id": "finish",
+      "termJa": "余韻（フィニッシュ）",
+      "termEn": "Finish",
+      "category": "tasting-process",
+      "definitionJa": "飲み込んだ後に残るフレーバーと感覚の長さと質。Short（15秒未満）、Medium（15〜45秒）、Long（45秒〜2分）、Very Long（2分以上）で表現される。",
+      "definitionEn": "The length and quality of flavour that lingers after swallowing. Described as Short (under 15 seconds), Medium (15–45 seconds), Long (45 seconds – 2 minutes), or Very Long (over 2 minutes)."
+    },
+    {
+      "id": "nosing",
+      "termJa": "ノージング",
+      "termEn": "Nosing",
+      "category": "tasting-process",
+      "definitionJa": "ウィスキーの香りを嗅ぐ行為。グラスのリムより少し下から徐々に深く鼻を入れ、複数回行う。少量の水を加えて再度ノージングすると、新たな香りが開く場合がある。",
+      "definitionEn": "The act of smelling the whisky. Gradually insert your nose closer to the rim and nose multiple times. Adding a few drops of water and nosing again can open up new aromas."
+    },
+    {
+      "id": "neat",
+      "termJa": "ニート",
+      "termEn": "Neat",
+      "category": "tasting-process",
+      "definitionJa": "水・氷・ミキサーを一切加えず、ウィスキーをそのまま飲む方法。テイスティングではまずニートで評価するのが基本。",
+      "definitionEn": "Drinking whisky without adding any water, ice, or mixer. In tasting, the standard practice is to first evaluate the whisky neat."
+    },
+    {
+      "id": "water-drop",
+      "termJa": "加水",
+      "termEn": "Adding Water",
+      "category": "tasting-process",
+      "definitionJa": "少量の常温水（2〜3滴）をウィスキーに加えること。エチルエステルが分解されて異なるフレーバーが解放される。最適な飲用濃度は20〜30% ABV。氷や冷水は香りを閉じ込めるため推奨されない。",
+      "definitionEn": "Adding a few drops of room-temperature water to the whisky. This breaks down ethyl esters, releasing different flavour compounds. The optimal drinking strength is 20–30% ABV. Ice or cold water suppresses aromas and is not recommended for tasting."
+    },
+    {
+      "id": "legs",
+      "termJa": "レッグス",
+      "termEn": "Legs",
+      "category": "tasting-process",
+      "definitionJa": "グラスを回したときに内壁を流れ落ちる雫のこと。雫の速さと量でウィスキーの粘度・オイリーさを判断する。ゆっくりとした厚い雫はフルボディや高アルコール度を示す傾向がある。",
+      "definitionEn": "The droplets that run down the inside of the glass after swirling. The speed and volume of the legs indicate the whisky's viscosity and oiliness. Slow, thick legs often suggest full body or high alcohol content."
+    },
+    {
+      "id": "pale-gold",
+      "termJa": "淡い黄金色",
+      "termEn": "Pale Gold",
+      "category": "tasting-process",
+      "definitionJa": "ウィスキーの色の一種。若い熟成やバーボン樽（エクスバーボン樽）の影響を示す。ライトボディで繊細なフレーバーを持つことが多い。",
+      "definitionEn": "A whisky colour indicating young maturation or ex-bourbon cask influence. Whiskies of this colour often have a lighter body and more delicate flavours.",
+      "examplesJa": ["若いスコッチウィスキー", "バーボン樽熟成"],
+      "examplesEn": ["Young Scotch whisky", "Ex-bourbon matured"]
+    },
+    {
+      "id": "amber",
+      "termJa": "琥珀色",
+      "termEn": "Amber",
+      "category": "tasting-process",
+      "definitionJa": "中程度の熟成を示すウィスキーの色。バーボン樽やシェリー樽の組み合わせで得られることが多く、スコッチウィスキーでは最も一般的な色域。",
+      "definitionEn": "A whisky colour indicating medium maturation. Often achieved through ex-bourbon or sherry cask maturation, and is the most common colour range for Scotch whisky.",
+      "examplesJa": ["中熟成のスコッチ", "バーボン＋シェリー樽フィニッシュ"],
+      "examplesEn": ["Medium-aged Scotch", "Bourbon + sherry cask finish"]
+    },
+    {
+      "id": "copper",
+      "termJa": "銅色",
+      "termEn": "Copper",
+      "category": "tasting-process",
+      "definitionJa": "シェリー樽の影響や長期熟成を示す色。深みのあるドライフルーツ、チョコレート、スパイスのフレーバーを持つことが多い。",
+      "definitionEn": "A whisky colour indicating sherry cask influence or longer maturation. Whiskies of this colour often carry rich dried fruit, chocolate, and spice flavours.",
+      "examplesJa": ["シェリー樽熟成", "長期熟成スコッチ"],
+      "examplesEn": ["Sherry cask matured", "Long-aged Scotch"]
+    },
+    {
+      "id": "mahogany",
+      "termJa": "マホガニー",
+      "termEn": "Mahogany",
+      "category": "tasting-process",
+      "definitionJa": "濃いシェリー樽や極めて長期の熟成を示す深い茶色。フルボディで複雑なフレーバーを持ち、ポート・プルーン・チョコレートなどの濃厚な風味が特徴。",
+      "definitionEn": "A deep brown colour indicating heavy sherry cask influence or very long maturation. Full-bodied with complex flavours; characterised by rich port, prune, and chocolate notes.",
+      "examplesJa": ["オロロソシェリー樽熟成", "30年超の長期熟成"],
+      "examplesEn": ["Oloroso sherry cask matured", "30+ year aged"]
+    },
+    {
+      "id": "peaty",
+      "termJa": "ピーティ",
+      "termEn": "Peaty",
+      "category": "flavour-wheel",
+      "definitionJa": "泥炭（ピート）を燃焼させて乾燥させた麦芽由来のスモーキーな香味。アイラ地方のウィスキーに特に顕著で、フェノール化合物がその特徴的な風味を生み出す。強度はppm（フェノール値）で表される。",
+      "definitionEn": "Smoky character derived from malt dried using burning peat. Particularly prominent in Islay whiskies; phenolic compounds create the characteristic flavour. Intensity is measured in ppm (parts per million phenols).",
+      "examplesJa": ["アイラモルト", "キャンプファイヤー", "燻製"],
+      "examplesEn": ["Islay malt", "Campfire", "Smoked wood"]
+    },
+    {
+      "id": "smoky",
+      "termJa": "スモーキー",
+      "termEn": "Smoky",
+      "category": "flavour-wheel",
+      "definitionJa": "燻製のような香りと風味。ピート由来のスモークのほか、チャーされた樽や長期熟成でも生じる。キャンプファイヤー、コールタール、燻製食品などに例えられる。",
+      "definitionEn": "A smoky aroma and flavour. Can derive from peat, charred casks, or long maturation. Described as campfire, coal tar, or smoked foods.",
+      "examplesJa": ["キャンプファイヤー", "燻製ニシン", "コールタール"],
+      "examplesEn": ["Campfire", "Smoked herring", "Coal tar"]
+    },
+    {
+      "id": "phenolic",
+      "termJa": "フェノリック",
+      "termEn": "Phenolic",
+      "category": "flavour-wheel",
+      "definitionJa": "フェノール系化合物に由来する香り。ピートを燃焼させることで発生し、薬品・ヨード・消毒液のような特徴的な風味を与える。アイラモルトの代表的な特徴。",
+      "definitionEn": "Character derived from phenol compounds. Generated by burning peat; imparts medicinal, iodine, and antiseptic-like flavours. A defining characteristic of Islay malts.",
+      "examplesJa": ["ヨード", "消毒液", "絆創膏"],
+      "examplesEn": ["Iodine", "Antiseptic", "Plaster"]
+    },
+    {
+      "id": "medicinal",
+      "termJa": "メディシナル",
+      "termEn": "Medicinal",
+      "category": "flavour-wheel",
+      "definitionJa": "薬品・病院・消毒液を思わせる香り。ピート由来のフェノール化合物によるもので、アイラモルトに特徴的。ヨード、絆創膏などに例えられる。",
+      "definitionEn": "A medicine, hospital, or antiseptic-like aroma. Caused by peat-derived phenolic compounds; characteristic of Islay malts. Described as iodine, plaster, and antiseptic.",
+      "examplesJa": ["ヨード", "絆創膏", "消毒液"],
+      "examplesEn": ["Iodine", "Plaster", "Antiseptic"]
+    },
+    {
+      "id": "iodine",
+      "termJa": "ヨード",
+      "termEn": "Iodine",
+      "category": "flavour-wheel",
+      "definitionJa": "ヨウ素のような独特の薬品臭。ピート焚きのアイラモルトに多く見られ、海岸近くの蒸溜所のウィスキーに特に顕著。フェノリック・メディシナルフレーバーの代表例。",
+      "definitionEn": "A distinctive iodine-like medicinal aroma. Common in heavily peated Islay malts, particularly from coastal distilleries. A key example of phenolic and medicinal flavour.",
+      "examplesJa": ["ラフロイグ", "アードベッグ", "ラガヴーリン"],
+      "examplesEn": ["Laphroaig", "Ardbeg", "Lagavulin"]
+    },
+    {
+      "id": "fruity",
+      "termJa": "フルーティ",
+      "termEn": "Fruity",
+      "category": "flavour-wheel",
+      "definitionJa": "果実のような香りと風味。SWRIフレーバーホイールの主要カテゴリーで、柑橘・生果実・加熱果実・ドライフルーツに細分される。発酵工程で生成されるエステル化合物が主な原因。",
+      "definitionEn": "Fruit-like aromas and flavours. A major SWRI Flavour Wheel category, subdivided into citric, fresh fruit, cooked fruit, and dried fruit. Primarily caused by ester compounds produced during fermentation.",
+      "examplesJa": ["リンゴ", "洋梨", "レーズン", "オレンジ"],
+      "examplesEn": ["Apple", "Pear", "Raisin", "Orange"]
+    },
+    {
+      "id": "citrus",
+      "termJa": "シトラス",
+      "termEn": "Citrus",
+      "category": "flavour-wheel",
+      "definitionJa": "柑橘類のような爽やかな香りと風味。オレンジ、レモン、グレープフルーツなどに例えられ、発酵由来のエステル化合物が原因。スペイサイドやローランドのウィスキーに多い。",
+      "definitionEn": "Fresh, bright aromas and flavours reminiscent of citrus fruits. Described as orange, lemon, and grapefruit; caused by fermentation-derived ester compounds. Common in Speyside and Lowland whiskies.",
+      "examplesJa": ["オレンジ", "レモン", "グレープフルーツ"],
+      "examplesEn": ["Orange", "Lemon", "Grapefruit"]
+    },
+    {
+      "id": "dried-fruit",
+      "termJa": "ドライフルーツ",
+      "termEn": "Dried Fruit",
+      "category": "flavour-wheel",
+      "definitionJa": "レーズン、イチジク、プルーン、フルーツケーキのような濃縮された甘みのある果実の香りと風味。シェリー樽熟成のウィスキーに特に顕著で、長期熟成によっても生じる。",
+      "definitionEn": "Rich, concentrated fruit aromas and flavours reminiscent of raisins, figs, prunes, and fruit cake. Particularly prominent in sherry cask matured whiskies and can also result from long maturation.",
+      "examplesJa": ["レーズン", "イチジク", "プルーン", "フルーツケーキ"],
+      "examplesEn": ["Raisin", "Fig", "Prune", "Fruit cake"]
+    },
+    {
+      "id": "floral",
+      "termJa": "フローラル",
+      "termEn": "Floral",
+      "category": "flavour-wheel",
+      "definitionJa": "花・草・ハーブのような香り。SWRIフレーバーホイールの主要カテゴリーで、芳香・温室・葉っぱ・干し草に細分される。ローランドや若いスコッチウィスキーに多い特徴。",
+      "definitionEn": "Aromas reminiscent of flowers, grass, and herbs. A major SWRI Flavour Wheel category, subdivided into fragrant, greenhouse, leafy, and hay. Common in Lowland and young Scotch whiskies.",
+      "examplesJa": ["ラベンダー", "ローズウォーター", "刈り草", "干し草"],
+      "examplesEn": ["Lavender", "Rose water", "Fresh-cut grass", "Dried hay"]
+    },
+    {
+      "id": "vanilla",
+      "termJa": "バニラ",
+      "termEn": "Vanilla",
+      "category": "flavour-wheel",
+      "definitionJa": "バニラのような甘い芳香。主にアメリカンオーク樽のリグニンが分解されてバニリンが生成されることで生じる。バーボン樽熟成のウィスキーや、バーボンウィスキー自体に特徴的。",
+      "definitionEn": "Sweet vanilla-like aroma. Primarily produced when lignin in American oak casks breaks down to form vanillin. Characteristic of ex-bourbon cask matured whiskies and bourbon itself.",
+      "examplesJa": ["エクスバーボン樽熟成", "バーボン", "カスタード"],
+      "examplesEn": ["Ex-bourbon cask matured", "Bourbon", "Custard"]
+    },
+    {
+      "id": "honey",
+      "termJa": "ハチミツ",
+      "termEn": "Honey",
+      "category": "flavour-wheel",
+      "definitionJa": "ハチミツのような甘い濃厚な香りと風味。SWRIフレーバーホイールのフェインティカテゴリーに属する。スペイサイドやハイランドのウィスキー、アイリッシュウィスキーに多く見られる。",
+      "definitionEn": "Sweet, rich honey-like aroma and flavour. Belongs to the Feinty category of the SWRI Flavour Wheel. Commonly found in Speyside, Highland, and Irish whiskies.",
+      "examplesJa": ["ハチミツ", "ゴールデンシロップ", "蜜蝋"],
+      "examplesEn": ["Honey", "Golden syrup", "Beeswax"]
+    },
+    {
+      "id": "caramel",
+      "termJa": "キャラメル",
+      "termEn": "Caramel",
+      "category": "flavour-wheel",
+      "definitionJa": "加熱した砂糖のような甘く香ばしい香りと風味。オーク樽のチャー（焦がし）によって生成されることが多く、バーボンウィスキーや長期熟成のスコッチに特徴的。",
+      "definitionEn": "Sweet, toasty aroma and flavour reminiscent of heated sugar. Often generated by the char of oak casks; characteristic of bourbon whisky and long-aged Scotch.",
+      "examplesJa": ["バーボン", "バタースコッチ", "タフィー"],
+      "examplesEn": ["Bourbon", "Butterscotch", "Toffee"]
+    },
+    {
+      "id": "toffee",
+      "termJa": "トフィー",
+      "termEn": "Toffee",
+      "category": "flavour-wheel",
+      "definitionJa": "バターキャラメルのような甘くコクのある風味。樽由来の甘みと乳製品的なクリーミーさが組み合わさったフレーバー。キャンベルタウンやバーボン熟成のウィスキーに多い。",
+      "definitionEn": "Sweet, buttery caramel-like flavour. A combination of cask-derived sweetness and dairy-like creaminess. Common in Campbeltown and bourbon-matured whiskies.",
+      "examplesJa": ["バターキャラメル", "キャンベルタウンモルト"],
+      "examplesEn": ["Butter caramel", "Campbeltown malt"]
+    },
+    {
+      "id": "chocolate",
+      "termJa": "チョコレート",
+      "termEn": "Chocolate",
+      "category": "flavour-wheel",
+      "definitionJa": "チョコレートのような甘くリッチな香りと風味。SWRIフレーバーホイールのワイニーカテゴリーに属する。シェリー樽熟成や長期熟成のウィスキーに多く、クリームチョコ・カカオ・ビターチョコに細分される。",
+      "definitionEn": "Rich, sweet chocolate-like aroma and flavour. Belongs to the Winey category of the SWRI Flavour Wheel. Common in sherry cask or long-aged whiskies; subdivided into milk chocolate, cacao, and dark chocolate.",
+      "examplesJa": ["クリームチョコ", "カカオ", "ビターチョコ"],
+      "examplesEn": ["Milk chocolate", "Cacao", "Dark chocolate"]
+    },
+    {
+      "id": "spicy",
+      "termJa": "スパイシー",
+      "termEn": "Spicy",
+      "category": "flavour-wheel",
+      "definitionJa": "スパイスのような刺激的な香りと風味。黒胡椒、シナモン、ジンジャー、クローブなどに例えられる。ライウィスキーや新しいオーク樽、高アルコール度数のウィスキーに多い。",
+      "definitionEn": "Pungent, stimulating aroma and flavour reminiscent of spices. Described as black pepper, cinnamon, ginger, and clove. Common in rye whiskies, new oak cask matured, or high-ABV whiskies.",
+      "examplesJa": ["黒胡椒", "シナモン", "ジンジャー", "クローブ"],
+      "examplesEn": ["Black pepper", "Cinnamon", "Ginger", "Clove"]
+    },
+    {
+      "id": "pepper",
+      "termJa": "ペッパー",
+      "termEn": "Pepper",
+      "category": "flavour-wheel",
+      "definitionJa": "黒胡椒のような刺激的なスパイシー感。ライウィスキーや新しいオーク樽熟成のウィスキー、高アルコール度数のカスクストレングスに多く見られる特徴。",
+      "definitionEn": "A pungent, spicy sensation reminiscent of black pepper. Common in rye whiskies, new oak cask matured, or cask strength whiskies with high ABV.",
+      "examplesJa": ["ライウィスキー", "カスクストレングス"],
+      "examplesEn": ["Rye whisky", "Cask strength"]
+    },
+    {
+      "id": "cereal",
+      "termJa": "シリアル",
+      "termEn": "Cereal",
+      "category": "flavour-wheel",
+      "definitionJa": "穀物のような素朴な香りと風味。SWRIフレーバーホイールの主要カテゴリーで、お粥・コーン・麦わら・麦芽糖・酵母などに細分される。グレーンウィスキーやライトボディのモルトに特徴的。",
+      "definitionEn": "Grain-like, wholesome aromas and flavours. A major SWRI Flavour Wheel category, subdivided into cooked mash, cooked veg, husky, malt extract, and yeasty. Characteristic of grain whiskies and light-bodied malts.",
+      "examplesJa": ["お粥", "コーン", "麦わら", "ビスケット"],
+      "examplesEn": ["Porridge", "Corn", "Straw", "Biscuit"]
+    },
+    {
+      "id": "malty",
+      "termJa": "モルティ",
+      "termEn": "Malty",
+      "category": "flavour-wheel",
+      "definitionJa": "麦芽のような甘くビスケット的な香りと風味。発芽・乾燥させた大麦由来の特徴で、麦芽糖・ビスケット・麦わらなどに例えられる。シングルモルトスコッチの基本フレーバーの一つ。",
+      "definitionEn": "Sweet, biscuit-like aromas and flavours derived from malted barley. Described as malt sugar, biscuit, and straw. One of the fundamental flavours of single malt Scotch.",
+      "examplesJa": ["ビスケット", "麦芽糖", "麦わら"],
+      "examplesEn": ["Biscuit", "Malt sugar", "Straw"]
+    },
+    {
+      "id": "grassy",
+      "termJa": "グラッシー",
+      "termEn": "Grassy",
+      "category": "flavour-wheel",
+      "definitionJa": "刈り草・青葉のような清々しい香り。フローラルカテゴリーのリーフィー（Leafy）サブカテゴリーに属する。ローランドのウィスキーや若いスコッチに多い特徴。",
+      "definitionEn": "Fresh, clean aromas reminiscent of cut grass and green leaves. Belongs to the Leafy subcategory of the Floral category. Common in Lowland whiskies and young Scotch.",
+      "examplesJa": ["刈り草", "青葉", "松の実"],
+      "examplesEn": ["Fresh-cut grass", "Green leaves", "Pine nuts"]
+    },
+    {
+      "id": "nutty",
+      "termJa": "ナッティ",
+      "termEn": "Nutty",
+      "category": "flavour-wheel",
+      "definitionJa": "ナッツのような香ばしく濃厚な香りと風味。SWRIフレーバーホイールのワイニーカテゴリーに属する。クルミ・ヘーゼルナッツ・アーモンドなどに例えられ、シェリー樽熟成や長期熟成に多い。",
+      "definitionEn": "Toasty, rich nut-like aromas and flavours. Belongs to the Winey category of the SWRI Flavour Wheel. Described as walnut, hazelnut, and almond. Common in sherry cask matured or long-aged whiskies.",
+      "examplesJa": ["クルミ", "ヘーゼルナッツ", "アーモンド"],
+      "examplesEn": ["Walnut", "Hazelnut", "Almond"]
+    },
+    {
+      "id": "oaky",
+      "termJa": "オーキー",
+      "termEn": "Oaky",
+      "category": "flavour-wheel",
+      "definitionJa": "オーク樽由来の木の香りと風味。バニラ・ウッド・タンニンなどのフレーバーを伴う。長期熟成や新樽使用のウィスキーで強く感じられ、過剰になると渋みや苦みが増す。",
+      "definitionEn": "Woody aromas and flavours derived from oak casks. Accompanied by vanilla, woody, and tannin characters. More prominent in long-aged or new-cask whiskies; excessive oakiness can add astringency and bitterness.",
+      "examplesJa": ["オーク", "バニラ", "タンニン"],
+      "examplesEn": ["Oak", "Vanilla", "Tannin"]
+    },
+    {
+      "id": "woody",
+      "termJa": "ウッディ",
+      "termEn": "Woody",
+      "category": "flavour-wheel",
+      "definitionJa": "木・樹脂・乾いた木材のような香りと風味。SWRIフレーバーホイールの熟成由来カテゴリー（カテゴリー7）で、トースト・バニラ・古い木・新しい木に細分される。",
+      "definitionEn": "Aromas and flavours of wood, resin, and dry timber. A maturation-derived category (Category 7) in the SWRI Flavour Wheel, subdivided into toasted, vanilla/custard, old wood, and new wood.",
+      "examplesJa": ["オーク", "シダー", "樹脂", "鉛筆"],
+      "examplesEn": ["Oak", "Cedar", "Resin", "Pencil shavings"]
+    },
+    {
+      "id": "sulphury",
+      "termJa": "スルフリー",
+      "termEn": "Sulphury",
+      "category": "flavour-wheel",
+      "definitionJa": "硫黄化合物に由来する香り。SWRIフレーバーホイールのカテゴリー6で、マッチ・ゴム・キャベツなどに例えられる。少量では複雑さを加えるが、過剰になるとオフフレーバーと見なされる。",
+      "definitionEn": "Aromas derived from sulphur compounds. Category 6 of the SWRI Flavour Wheel; described as struck match, rubber, and cabbage. In small amounts it adds complexity; in excess it is considered an off-flavour.",
+      "examplesJa": ["マッチ", "硫黄", "キャベツ", "ゴム"],
+      "examplesEn": ["Struck match", "Sulphur", "Cabbage", "Rubber"]
+    },
+    {
+      "id": "mouthfeel",
+      "termJa": "マウスフィール",
+      "termEn": "Mouthfeel",
+      "category": "mouthfeel",
+      "definitionJa": "口の中でウィスキーが与える物理的な質感・触感の総称。粘度、とろみ、なめらかさ、収斂感などを含む。アルコール度数・熟成期間・オイリー化合物の量などに影響される。",
+      "definitionEn": "The overall physical texture and sensation of whisky in the mouth. Encompasses viscosity, smoothness, creaminess, and astringency. Influenced by alcohol content, maturation length, and oily compounds."
+    },
+    {
+      "id": "oily",
+      "termJa": "オイリー",
+      "termEn": "Oily",
+      "category": "mouthfeel",
+      "definitionJa": "とろりとした、粘度が高い質感。ノンチルフィルタードのウィスキーや高アルコール度数のカスクストレングスに特徴的。オイリーなテクスチャーはコクと深みを与える。",
+      "definitionEn": "Rich, thick, coating texture in the mouth. Characteristic of non-chill filtered whiskies or high-ABV cask strength bottlings. An oily texture adds richness and depth.",
+      "examplesJa": ["ノンチルフィルタード", "カスクストレングス"],
+      "examplesEn": ["Non-chill filtered", "Cask strength"]
+    },
+    {
+      "id": "creamy",
+      "termJa": "クリーミー",
+      "termEn": "Creamy",
+      "category": "mouthfeel",
+      "definitionJa": "クリーミーでなめらかな口当たり。乳製品的な質感で、柔らかく滑らかな印象を与える。ローランドのトリプル蒸溜ウィスキーやアイリッシュウィスキーに多い特徴。",
+      "definitionEn": "Smooth, dairy-like texture in the mouth. Gives a soft, silky impression. Common in Lowland triple-distilled whiskies and Irish whiskies.",
+      "examplesJa": ["ローランドモルト", "アイリッシュウィスキー"],
+      "examplesEn": ["Lowland malt", "Irish whiskey"]
+    },
+    {
+      "id": "thin",
+      "termJa": "シン（薄い）",
+      "termEn": "Thin",
+      "category": "mouthfeel",
+      "definitionJa": "水のように薄く軽い口当たり。フレーバーの厚みやコクに欠ける状態を示す。過度な加水や若すぎる熟成のウィスキーで感じられることがある。",
+      "definitionEn": "A watery, light mouthfeel lacking body and richness. Can indicate excessive dilution or insufficient maturation.",
+      "examplesJa": ["過加水", "若い熟成"],
+      "examplesEn": ["Over-diluted", "Under-matured"]
+    },
+    {
+      "id": "full-bodied",
+      "termJa": "フルボディ",
+      "termEn": "Full-bodied",
+      "category": "mouthfeel",
+      "definitionJa": "重厚でコクのある口当たり。口の中に広がる重さと深みを持ち、フレーバーが豊かで持続する。シェリー樽熟成、カスクストレングス、長期熟成のウィスキーに多い。",
+      "definitionEn": "Rich, weighty, substantial mouthfeel. Fills the mouth with depth and richness; flavours are abundant and persistent. Common in sherry cask matured, cask strength, and long-aged whiskies.",
+      "examplesJa": ["シェリー樽熟成", "カスクストレングス", "長期熟成"],
+      "examplesEn": ["Sherry cask matured", "Cask strength", "Long-aged"]
+    },
+    {
+      "id": "attack",
+      "termJa": "アタック",
+      "termEn": "Attack",
+      "category": "mouthfeel",
+      "definitionJa": "ウィスキーを口に含んだ瞬間の最初のフレーバーの強さと印象。「強い（Strong）」「穏やか（Gentle）」「スパイシー（Spicy）」などで表現される。",
+      "definitionEn": "The initial intensity and impression of flavour when the whisky first enters the mouth. Described as strong, gentle, spicy, etc."
+    },
+    {
+      "id": "short-finish",
+      "termJa": "短い余韻",
+      "termEn": "Short Finish",
+      "category": "finish",
+      "definitionJa": "飲み込んだ後、15秒未満でフレーバーが消えてしまう余韻。若いウィスキーや軽いスタイルに多い。",
+      "definitionEn": "A finish where flavours fade in under 15 seconds after swallowing. Common in young or lighter-style whiskies."
+    },
+    {
+      "id": "medium-finish",
+      "termJa": "中程度の余韻",
+      "termEn": "Medium Finish",
+      "category": "finish",
+      "definitionJa": "飲み込んだ後、15〜45秒間フレーバーが続く余韻。多くの標準的なウィスキーが持つ余韻の長さ。",
+      "definitionEn": "A finish where flavours persist for 15–45 seconds after swallowing. The typical finish length for most standard whiskies."
+    },
+    {
+      "id": "long-finish",
+      "termJa": "長い余韻",
+      "termEn": "Long Finish",
+      "category": "finish",
+      "definitionJa": "飲み込んだ後、45秒から2分間フレーバーが続く余韻。高品質のウィスキーや長期熟成に多く、複雑なフレーバーの変化が楽しめる。",
+      "definitionEn": "A finish where flavours linger for 45 seconds to 2 minutes after swallowing. Common in high-quality or long-aged whiskies, allowing enjoyment of complex flavour evolution."
+    },
+    {
+      "id": "very-long-finish",
+      "termJa": "非常に長い余韻",
+      "termEn": "Very Long Finish",
+      "category": "finish",
+      "definitionJa": "飲み込んだ後、2分以上フレーバーが続く余韻（Endless Finishとも呼ばれる）。例外的に高品質なウィスキーにのみ見られ、複雑で進化するフレーバーが特徴。",
+      "definitionEn": "A finish where flavours persist for over 2 minutes after swallowing (also called Endless Finish). Found only in exceptionally high-quality whiskies, featuring complex and evolving flavours."
+    },
+    {
+      "id": "warming",
+      "termJa": "ウォーミング",
+      "termEn": "Warming",
+      "category": "finish",
+      "definitionJa": "飲み込んだ後にじわじわと広がる温かみの感覚。アルコール由来の心地よい熱感で、喉や胸に広がる。フィニッシュの質を表す重要な表現の一つ。",
+      "definitionEn": "A gentle, spreading warmth felt after swallowing. A pleasant heat derived from alcohol that spreads through the throat and chest. One of the key descriptors for finish quality."
+    },
+    {
+      "id": "drying",
+      "termJa": "ドライイング",
+      "termEn": "Drying",
+      "category": "finish",
+      "definitionJa": "タンニンやオーク由来の乾燥した収斂感が余韻に残ること。口の中が乾く感覚で、オーク熟成の影響を示す。バランスが取れていれば複雑さを加えるが、過剰になると渋みになる。",
+      "definitionEn": "A drying, astringent sensation in the finish derived from tannins and oak. Indicates oak maturation influence. In balance it adds complexity; in excess it becomes harsh astringency."
+    },
+    {
+      "id": "single-malt",
+      "termJa": "シングルモルト",
+      "termEn": "Single Malt",
+      "category": "production",
+      "definitionJa": "一つの蒸溜所で、発芽大麦（モルテッドバーリー）のみを原料として製造されたウィスキー。スコッチの場合は3年以上スコットランドのオーク樽で熟成する必要がある。",
+      "definitionEn": "Whisky produced at a single distillery using only malted barley. For Scotch, must be matured in oak casks in Scotland for at least 3 years."
+    },
+    {
+      "id": "blended-malt",
+      "termJa": "ブレンデッドモルト",
+      "termEn": "Blended Malt",
+      "category": "production",
+      "definitionJa": "複数の蒸溜所のシングルモルトウィスキーをブレンドしたもの。グレーンウィスキーを含まない点でブレンデッドスコッチと異なる。かつては「ヴァッテッドモルト」と呼ばれていた。",
+      "definitionEn": "A blend of single malt whiskies from multiple distilleries. Differs from blended Scotch in that it contains no grain whisky. Formerly known as 'vatted malt'.",
+      "examplesJa": ["モンキーショルダー", "ジョニーウォーカーグリーンラベル"],
+      "examplesEn": ["Monkey Shoulder", "Johnnie Walker Green Label"]
+    },
+    {
+      "id": "blended-scotch",
+      "termJa": "ブレンデッドスコッチ",
+      "termEn": "Blended Scotch",
+      "category": "production",
+      "definitionJa": "モルトウィスキーとグレーンウィスキーをブレンドしたスコッチウィスキー。世界で最も多く販売されるウィスキーカテゴリーで、一貫した風味と入手しやすい価格が特徴。",
+      "definitionEn": "Scotch whisky that blends malt whisky with grain whisky. The world's most widely sold whisky category, characterised by consistent flavour and accessible pricing.",
+      "examplesJa": ["ジョニーウォーカー", "シーバスリーガル", "バランタイン"],
+      "examplesEn": ["Johnnie Walker", "Chivas Regal", "Ballantine's"]
+    },
+    {
+      "id": "cask-strength",
+      "termJa": "カスクストレングス",
+      "termEn": "Cask Strength",
+      "category": "production",
+      "definitionJa": "加水せずに樽から直接瓶詰めしたウィスキー。通常52〜66% ABVと高度数で、全フレーバー化合物が最大限に保持される。飲み手が自分好みに加水して楽しめる。",
+      "definitionEn": "Whisky bottled directly from the cask without dilution. Typically 52–66% ABV; all flavour compounds are preserved in full. The drinker can add water to their own preference.",
+      "examplesJa": ["アードベッグ・ウーガダール", "グレンファークラス・105"],
+      "examplesEn": ["Ardbeg Uigeadail", "Glenfarclas 105"]
+    },
+    {
+      "id": "non-chill-filtered",
+      "termJa": "ノンチルフィルタード",
+      "termEn": "Non-Chill Filtered",
+      "category": "production",
+      "definitionJa": "冷却ろ過（チルフィルタリング）を行わずに瓶詰めしたウィスキー。46%以上のABVで推奨され、オイリーな化合物（脂肪酸エステルなど）が保持されるため、より豊かなマウスフィールと複雑さを持つ。",
+      "definitionEn": "Whisky bottled without cold filtration. Recommended at 46% ABV or above; retains oily compounds (such as fatty acid esters) for a richer mouthfeel and greater complexity.",
+      "examplesJa": ["グレンリベット・ナデューラ", "グレンファークラス"],
+      "examplesEn": ["Glenlivet Nadurra", "Glenfarclas"]
+    },
+    {
+      "id": "age-statement",
+      "termJa": "エイジステートメント",
+      "termEn": "Age Statement",
+      "category": "production",
+      "definitionJa": "ラベルに表記された熟成年数。ブレンドや複数樽の場合、最も若い原酒の熟成年数を表示する。年数が長いほど樽の影響が大きく、価格も高い傾向があるが、年数だけが品質の指標ではない。",
+      "definitionEn": "The maturation age stated on the label. For blends or multi-cask expressions, it reflects the age of the youngest component. Longer age generally means more cask influence and higher price, but age alone is not a definitive quality indicator."
+    },
+    {
+      "id": "nas",
+      "termJa": "NAS（ノーエイジステートメント）",
+      "termEn": "NAS (No Age Statement)",
+      "category": "production",
+      "definitionJa": "熟成年数を表示しないウィスキー。ブレンダーの技術により複数の熟成年数の原酒を組み合わせて一貫した品質を実現する。年数表示がないことは低品質を意味しない。",
+      "definitionEn": "Whisky without a maturation age on the label. The blender uses skill to combine whiskies of various ages to achieve consistent quality. Absence of an age statement does not imply lower quality."
+    },
+    {
+      "id": "ex-bourbon",
+      "termJa": "エクスバーボン樽",
+      "termEn": "Ex-Bourbon Cask",
+      "category": "production",
+      "definitionJa": "バーボンウィスキーを熟成した後に再利用されるアメリカンホワイトオーク樽。バーボンは新品樽使用が義務付けられているため、使用済み樽がスコッチ等の熟成に多用される。バニラ・キャラメル・蜂蜜のフレーバーを与える。",
+      "definitionEn": "American white oak casks previously used to mature bourbon whisky. Because bourbon must use new casks, used barrels are widely repurposed for maturing Scotch and other whiskies. Imparts vanilla, caramel, and honey flavours.",
+      "examplesJa": ["グレンリベット", "グレンモーレンジィ"],
+      "examplesEn": ["The Glenlivet", "Glenmorangie"]
+    },
+    {
+      "id": "sherry-cask",
+      "termJa": "シェリー樽",
+      "termEn": "Sherry Cask",
+      "category": "production",
+      "definitionJa": "シェリーワインを熟成した後に再利用される樽。オロロソ・ペドロヒメネス・アモンティリャードなど種類が多い。ドライフルーツ・チョコレート・ナッツ・スパイスのリッチなフレーバーと深い色合いを与える。",
+      "definitionEn": "Casks previously used to mature sherry wine. Many types exist including Oloroso, Pedro Ximénez, and Amontillado. Imparts rich dried fruit, chocolate, nut, and spice flavours alongside deep colour.",
+      "examplesJa": ["グレンファークラス", "マッカラン", "グレンドロナック"],
+      "examplesEn": ["Glenfarclas", "The Macallan", "GlenDronach"]
+    },
+    {
+      "id": "double-matured",
+      "termJa": "ダブルマチュアード（ダブルウッド）",
+      "termEn": "Double Matured",
+      "category": "production",
+      "definitionJa": "二種類の樽で熟成を行うこと。主に最初の熟成樽から別の樽（フィニッシュ樽）に移して追加熟成する「カスクフィニッシング」を指す。ポート・シェリー・ワイン樽などでフィニッシングされることが多い。",
+      "definitionEn": "Maturation in two different cask types. Most commonly refers to 'cask finishing', where the whisky is transferred from the primary maturation cask to a finishing cask (e.g., port, sherry, or wine). Adds an additional layer of flavour complexity.",
+      "examplesJa": ["グレンモーレンジィ・ラサンタ（シェリー）", "バルヴェニー・ダブルウッド"],
+      "examplesEn": ["Glenmorangie Lasanta (Sherry)", "Balvenie DoubleWood"]
+    },
+    {
+      "id": "angels-share",
+      "termJa": "エンジェルズシェア",
+      "termEn": "Angel's Share",
+      "category": "production",
+      "definitionJa": "熟成中に樽から蒸発するウィスキーのこと。スコットランドでは年間約2%が蒸発する。「天使への取り分」と呼ばれ、長期熟成ほど多くのウィスキーが失われる一方でフレーバーが濃縮される。",
+      "definitionEn": "The portion of whisky that evaporates from the cask during maturation. In Scotland, approximately 2% evaporates annually. Called the 'angel's share'; longer maturation means more loss, but also greater flavour concentration."
+    },
+    {
+      "id": "speyside",
+      "termJa": "スペイサイド",
+      "termEn": "Speyside",
+      "category": "region",
+      "definitionJa": "スコットランド北東部、スペイ川流域に位置するスコッチウィスキーの法定産地。世界最多の蒸溜所が集中し、フルーティ・エレガント・甘い風味が特徴。リンゴ、洋梨、蜂蜜、シェリー、チョコレートのフレーバーが代表的。",
+      "definitionEn": "A protected Scotch whisky region in northeast Scotland along the River Spey. Home to the highest concentration of distilleries in the world; characterised by fruity, elegant, and sweet flavours. Key flavours include apple, pear, honey, sherry, and chocolate.",
+      "examplesJa": ["グレンリベット", "グレンフィデック", "マッカラン", "バルヴェニー"],
+      "examplesEn": ["The Glenlivet", "Glenfiddich", "The Macallan", "Balvenie"]
+    },
+    {
+      "id": "islay",
+      "termJa": "アイラ",
+      "termEn": "Islay",
+      "category": "region",
+      "definitionJa": "スコットランド西岸沖に位置する島で、スコッチウィスキーの法定産地。強いピートスモーク・ヨード・海岸風の特徴で有名。スモーク・ヨード・海藻・燻製魚・塩のフレーバーが代表的。",
+      "definitionEn": "An island off the west coast of Scotland and a protected Scotch whisky region. Famous for heavy peat smoke, iodine, and coastal character. Key flavours include smoke, iodine, seaweed, smoked fish, and salt.",
+      "examplesJa": ["ラフロイグ", "アードベッグ", "ラガヴーリン", "ボウモア"],
+      "examplesEn": ["Laphroaig", "Ardbeg", "Lagavulin", "Bowmore"]
+    },
+    {
+      "id": "highlands",
+      "termJa": "ハイランド",
+      "termEn": "Highlands",
+      "category": "region",
+      "definitionJa": "スコットランドの北部・中部に広がる最大の産地。産地が広大なため風味は多様で、ヘザー・蜂蜜・フルーツが代表的。地域によってはスモーキーな特徴も持つ。中程度のボディが一般的。",
+      "definitionEn": "The largest Scotch whisky region, spanning the north and centre of Scotland. The vast area produces diverse styles; heather, honey, and fruit are key flavours. Some areas produce smoky expressions. Typically medium-bodied.",
+      "examplesJa": ["グレンモーレンジィ", "ダルモア", "オーバン"],
+      "examplesEn": ["Glenmorangie", "Dalmore", "Oban"]
+    },
+    {
+      "id": "lowlands",
+      "termJa": "ローランド",
+      "termEn": "Lowlands",
+      "category": "region",
+      "definitionJa": "スコットランド南部に位置する産地。トリプル蒸溜による軽くソフトな特徴が多い。草・穀物・フローラル・クリーミーなフレーバーが代表的で、ライトボディのものが主流。",
+      "definitionEn": "A Scotch whisky region in southern Scotland. Many expressions are triple-distilled, producing light and soft character. Key flavours include grass, grain, floral, and creamy notes; light-bodied styles predominate.",
+      "examplesJa": ["オーヘントッシャン", "グレンキンチー"],
+      "examplesEn": ["Auchentoshan", "Glenkinchie"]
+    },
+    {
+      "id": "campbeltown",
+      "termJa": "キャンベルタウン",
+      "termEn": "Campbeltown",
+      "category": "region",
+      "definitionJa": "スコットランド西部・キンタイア半島先端にある産地。かつては蒸溜所が多数あったが現在は3蒸溜所のみ。塩気・オイリー・ブライニー（潮っぽい）な特徴があり、海塩・トフィー・バニラ・軽いスモークのフレーバーが代表的。",
+      "definitionEn": "A Scotch whisky region at the tip of the Kintyre Peninsula in western Scotland. Once home to many distilleries, now only three remain. Characterised by briny, oily, coastal notes; key flavours include sea salt, toffee, vanilla, and light smoke.",
+      "examplesJa": ["スプリングバンク", "グレンスコシア"],
+      "examplesEn": ["Springbank", "Glen Scotia"]
+    },
+    {
+      "id": "dram",
+      "termJa": "ドラム",
+      "termEn": "Dram",
+      "category": "general",
+      "definitionJa": "ウィスキーの一杯を指す非公式な用語。スコットランドで広く使われる表現で、量は一般的に25ml〜35ml程度。「一杯いかが」は \"Let's have a dram\" と表現する。",
+      "definitionEn": "An informal term for a measure of whisky. Widely used in Scotland; typically around 25–35ml. 'Fancy a dram?' is a common Scottish expression for offering a glass."
+    },
+    {
+      "id": "expression",
+      "termJa": "エクスプレッション",
+      "termEn": "Expression",
+      "category": "general",
+      "definitionJa": "ある蒸溜所の特定のボトリングやバリアントのこと。同じ蒸溜所でも異なる熟成年数・カスクタイプ・アルコール度数のエクスプレッションが存在する。",
+      "definitionEn": "A specific bottling or variant from a distillery. The same distillery may produce multiple expressions differing in age, cask type, and ABV."
+    },
+    {
+      "id": "distillery",
+      "termJa": "蒸溜所",
+      "termEn": "Distillery",
+      "category": "general",
+      "definitionJa": "ウィスキーを蒸溜・製造する施設。発酵・蒸溜・熟成の工程が行われる。各蒸溜所は使用する水・大麦・酵母・ポットスチルの形状・熟成環境の違いにより独自の特徴を生み出す。",
+      "definitionEn": "A facility that distils and produces whisky. Houses fermentation, distillation, and maturation processes. Each distillery develops its own character through unique water sources, barley, yeast, pot still shape, and maturation environment."
+    },
+    {
+      "id": "complexity",
+      "termJa": "複雑さ",
+      "termEn": "Complexity",
+      "category": "general",
+      "definitionJa": "層を成す多様なフレーバーが時間とともに変化・進化する特質。高品質なウィスキーの重要な指標で、一度に複数のフレーバーを感じ取れ、時間とともに新たな風味が現れるもの。",
+      "definitionEn": "The quality of having multiple layered flavours that evolve over time. A key indicator of high-quality whisky; multiple flavours can be detected simultaneously, with new aromas and tastes emerging over time."
+    },
+    {
+      "id": "balance",
+      "termJa": "バランス",
+      "termEn": "Balance",
+      "category": "general",
+      "definitionJa": "甘み・辛み・酸・苦みなどの要素が調和している状態。Jim Murray's Whisky Bibleでは100点中25点が「バランス」に割り当てられるほど重要な評価基準。",
+      "definitionEn": "The harmonious interplay of sweetness, spice, acidity, and bitterness. In Jim Murray's Whisky Bible, 25 of 100 points are allocated to 'balance', reflecting its importance as an evaluation criterion."
+    },
+    {
+      "id": "body",
+      "termJa": "ボディ",
+      "termEn": "Body",
+      "category": "mouthfeel",
+      "definitionJa": "ウィスキーの口の中での重さ・コク・ボリューム感。ライトボディ・ミディアムボディ・フルボディで表現される。熟成期間・アルコール度数・蒸溜方法に影響される。",
+      "definitionEn": "The weight, richness, and volume of whisky in the mouth. Described as light-bodied, medium-bodied, or full-bodied. Influenced by maturation length, ABV, and distillation method."
+    },
+    {
+      "id": "silky",
+      "termJa": "シルキー",
+      "termEn": "Silky",
+      "category": "mouthfeel",
+      "definitionJa": "絹のように滑らかで上品な口当たり。高品質なウィスキーの質感を表す表現で、クリーミーより一層繊細で洗練された印象を与える。",
+      "definitionEn": "Smooth and refined, like silk. Describes the texture of high-quality whisky; even more delicate and refined than creamy.",
+      "examplesJa": ["長期熟成の高級スコッチ", "アイリッシュウィスキー"],
+      "examplesEn": ["Long-aged premium Scotch", "Irish whiskey"]
+    },
+    {
+      "id": "astringent",
+      "termJa": "アストリンジェント（収斂性）",
+      "termEn": "Astringent",
+      "category": "mouthfeel",
+      "definitionJa": "タンニン由来の口をすぼめるような収斂感。過度なオーク熟成や若すぎる熟成で生じやすい。適度な収斂感は複雑さを加えるが、過剰になると渋みとして不快感を与える。",
+      "definitionEn": "A mouth-puckering, drying sensation derived from tannins. More likely with excessive oak maturation or under-aged whisky. Moderate astringency adds complexity; excessive amounts create an unpleasant harsh dryness."
+    },
+    {
+      "id": "clean",
+      "termJa": "クリーン",
+      "termEn": "Clean",
+      "category": "finish",
+      "definitionJa": "雑味なくきれいに消えるフィニッシュ。オフフレーバーや過剰な苦み・渋みのない、スッキリとした後味。ローランドや軽やかなスタイルのウィスキーに多い表現。",
+      "definitionEn": "A finish that fades cleanly without off-notes. A fresh aftertaste free of excessive bitterness or astringency. Common descriptor for Lowland and lighter-style whiskies."
+    },
+    {
+      "id": "lingering",
+      "termJa": "リンガリング",
+      "termEn": "Lingering",
+      "category": "finish",
+      "definitionJa": "じわじわとゆっくり消えていく余韻。長時間にわたってフレーバーが持続する様子を表す。高品質なウィスキーの特徴の一つで、複雑なフレーバーの変化が楽しめる。",
+      "definitionEn": "A slowly fading, persistent finish. Describes flavours that linger for a long time. One of the hallmarks of high-quality whisky, allowing the enjoyment of complex flavour evolution."
+    },
+    {
+      "id": "evolving",
+      "termJa": "エボルビング",
+      "termEn": "Evolving",
+      "category": "finish",
+      "definitionJa": "余韻の中でフレーバーが変化・進化する様子。飲み込んだ後に異なるフレーバーが次々と現れ、テイスティングの楽しみを延長させる。複雑な高級ウィスキーに多い特徴。",
+      "definitionEn": "Flavours that shift and change in the finish. Different flavours emerge in succession after swallowing, extending the tasting experience. Characteristic of complex, high-quality whiskies."
+    },
+    {
+      "id": "tannic",
+      "termJa": "タニック",
+      "termEn": "Tannic",
+      "category": "finish",
+      "definitionJa": "タンニンによる収斂感が余韻に残る状態。オーク樽の長期熟成で生じやすく、口の中が乾く感覚が特徴。赤ワインの渋みに似た感覚で、バランスが取れていれば複雑さを加える。",
+      "definitionEn": "An astringent, tannin-driven sensation in the finish. More likely with extended oak maturation; characterised by a drying, puckering sensation similar to red wine tannins. In balance, it adds complexity."
+    },
+    {
+      "id": "vatting",
+      "termJa": "ヴァッティング",
+      "termEn": "Vatting",
+      "category": "production",
+      "definitionJa": "同種のウィスキー（主にモルトウィスキー）の複数の樽を組み合わせること。一貫した風味プロファイルを実現するためにブレンダーが行う作業。ブレンデッドモルトはヴァッティングで作られる。",
+      "definitionEn": "Combining multiple casks of the same type of whisky (primarily malt whisky). A blender's technique to achieve a consistent flavour profile. Blended malt whiskies are created through vatting."
+    },
+    {
+      "id": "wash",
+      "termJa": "ウォッシュ",
+      "termEn": "Wash",
+      "category": "production",
+      "definitionJa": "大麦麦汁を発酵させて作られるビールのような液体（約7〜8% ABV）。これをポットスチルで蒸溜してウィスキーの原酒（ニューメイク）を得る。発酵工程で生成されるエステルがフルーティなフレーバーの源となる。",
+      "definitionEn": "A beer-like liquid (approximately 7–8% ABV) produced by fermenting malted barley wort. This is distilled in pot stills to produce new make spirit. Esters produced during fermentation are the source of fruity flavours."
+    },
+    {
+      "id": "new-make",
+      "termJa": "ニューメイク",
+      "termEn": "New Make",
+      "category": "production",
+      "definitionJa": "蒸溜直後の熟成前の原酒。無色透明で高アルコール（約63〜70% ABV）。これを樽に詰めて熟成させることでウィスキーになる。各蒸溜所のニューメイクの個性が最終的なウィスキーの特徴を決定づける。",
+      "definitionEn": "The raw spirit fresh from the still before maturation. Colourless and high-ABV (approximately 63–70%). Placed into casks for maturation to become whisky. The character of each distillery's new make largely determines the final whisky's personality."
+    },
+    {
+      "id": "pot-still",
+      "termJa": "ポットスチル",
+      "termEn": "Pot Still",
+      "category": "production",
+      "definitionJa": "伝統的な銅製の蒸溜器。球根状のボウルと細長い首（スワンネック）を持ち、バッチ蒸溜を行う。形状がウィスキーのキャラクターに大きく影響し、各蒸溜所固有の風味を生み出す一因となる。",
+      "definitionEn": "Traditional copper distillation vessel with a bulbous bowl and a slender neck (swan neck). Uses batch distillation. The shape significantly influences the whisky's character, contributing to each distillery's unique flavour profile."
+    },
+    {
+      "id": "peat",
+      "termJa": "ピート",
+      "termEn": "Peat",
+      "category": "production",
+      "definitionJa": "植物が数千年かけて堆積・炭化した泥炭。スコットランドでは麦芽の乾燥に使用され、燃焼することでフェノール化合物を生成し、ウィスキーに独特のスモーキーな風味を与える。フェノール値（ppm）でピートの強度を測定する。",
+      "definitionEn": "Peat is partially decomposed plant matter accumulated over thousands of years. In Scotland it is used to dry malt; burning peat generates phenolic compounds that impart a distinctive smoky flavour to whisky. Peat intensity is measured in parts per million (ppm) phenols."
+    },
+    {
+      "id": "maturation",
+      "termJa": "熟成",
+      "termEn": "Maturation",
+      "category": "production",
+      "definitionJa": "ニューメイクスピリットをオーク樽に詰めて保存する期間。スコッチウィスキーは最低3年間の熟成が法的に義務付けられている。この期間中に樽との相互作用・蒸発・酸化によりフレーバーが発展する。",
+      "definitionEn": "The period during which new make spirit is stored in oak casks. Scotch whisky is legally required to mature for a minimum of 3 years. During this time, flavour develops through cask interaction, evaporation, and oxidation."
+    },
+    {
+      "id": "glencairn",
+      "termJa": "グレンケアングラス",
+      "termEn": "Glencairn Glass",
+      "category": "general",
+      "definitionJa": "テイスティング用に最も広く使われるウィスキーグラス。チューリップ型で重い底部・幅広いボウル・細いリムを持ち、香りを集約しやすい設計。スコッチウィスキー業界の標準的なテイスティンググラス。",
+      "definitionEn": "The most widely used whisky tasting glass. Tulip-shaped with a heavy base, wide bowl tapering to a narrow rim; designed to concentrate aromas effectively. The standard tasting glass of the Scotch whisky industry."
+    },
+    {
+      "id": "finish-spicy",
+      "termJa": "スパイシーフィニッシュ",
+      "termEn": "Spicy Finish",
+      "category": "finish",
+      "definitionJa": "余韻にスパイス感が続く状態。黒胡椒・シナモン・ジンジャーなどのスパイスフレーバーが飲み込んだ後も持続する。ライウィスキーや高アルコール度数のウィスキーに多い特徴。",
+      "definitionEn": "A finish where spice character lingers. Spice flavours such as black pepper, cinnamon, and ginger persist after swallowing. Common in rye whiskies and high-ABV expressions."
+    },
+    {
+      "id": "smoky-finish",
+      "termJa": "スモーキーフィニッシュ",
+      "termEn": "Smoky Finish",
+      "category": "finish",
+      "definitionJa": "余韻にスモーキーさが続く状態。ピート由来の煙のような風味が飲み込んだ後も長時間持続する。アイラモルトの特徴的な余韻。",
+      "definitionEn": "A finish where smokiness lingers. Peat-derived smoky flavours persist for an extended time after swallowing. A hallmark of Islay malt finishes.",
+      "examplesJa": ["ラフロイグ", "アードベッグ"],
+      "examplesEn": ["Laphroaig", "Ardbeg"]
+    },
+    {
+      "id": "bourbon-whiskey",
+      "termJa": "バーボンウィスキー",
+      "termEn": "Bourbon Whiskey",
+      "category": "region",
+      "definitionJa": "アメリカ産ウィスキーの一種。法的要件として、コーン51%以上使用・新品チャーアメリカンホワイトオーク樽での熟成・80%以下の蒸溜度数・62.5%以下での樽詰めが定められている。バニラ・キャラメル・バタースコッチ・コーンが代表的フレーバー。",
+      "definitionEn": "An American whiskey style. Legal requirements include a minimum of 51% corn in the mash bill, maturation in new charred American white oak casks, distillation to no more than 80% ABV, and cask entry at no more than 62.5% ABV. Key flavours: vanilla, caramel, butterscotch, and corn.",
+      "examplesJa": ["バッファロートレース", "ウッドフォードリザーブ", "メーカーズマーク"],
+      "examplesEn": ["Buffalo Trace", "Woodford Reserve", "Maker's Mark"]
+    },
+    {
+      "id": "irish-whiskey",
+      "termJa": "アイリッシュウィスキー",
+      "termEn": "Irish Whiskey",
+      "category": "region",
+      "definitionJa": "アイルランド産ウィスキー。トリプル蒸溜による滑らかさと未発芽大麦の使用が特徴。ハチミツ・バニラ・軽い果実・クリーミーなフレーバーが代表的。スコッチより全般的に軽やかでアクセスしやすい。",
+      "definitionEn": "Whiskey produced in Ireland. Characterised by smoothness from triple distillation and the use of unmalted barley. Key flavours: honey, vanilla, light fruit, and creamy notes. Generally lighter and more approachable than Scotch.",
+      "examplesJa": ["ジェムソン", "ブッシュミルズ", "レッドブレスト"],
+      "examplesEn": ["Jameson", "Bushmills", "Redbreast"]
+    },
+    {
+      "id": "japanese-whisky",
+      "termJa": "ジャパニーズウィスキー",
+      "termEn": "Japanese Whisky",
+      "category": "region",
+      "definitionJa": "日本産ウィスキー。スコッチの技術を継承しつつ繊細さと調和（和）を重視した独自スタイル。繊細なフルーツ・フローラル・軽いスモークが特徴。ミズナラ樽はサンダルウッド・お香・バニラの独特の風味を与える。",
+      "definitionEn": "Whisky produced in Japan. Rooted in Scotch traditions but with an emphasis on delicacy and harmony (wa). Key flavours: delicate fruit, floral, and light smoke. Mizunara (Japanese oak) casks impart unique sandalwood, incense, and vanilla notes.",
+      "examplesJa": ["山崎", "白州", "余市"],
+      "examplesEn": ["Yamazaki", "Hakushu", "Yoichi"]
+    },
+    {
+      "id": "fermentation",
+      "termJa": "発酵",
+      "termEn": "Fermentation",
+      "category": "production",
+      "definitionJa": "麦汁に酵母を加え、糖をアルコールとフレーバー化合物に変換する過程。発酵時間（通常48〜120時間）がウィスキーのフルーティさや複雑さに大きく影響する。エステルなどのフレーバー化合物はこの段階で生成される。",
+      "definitionEn": "The process of adding yeast to wort to convert sugars into alcohol and flavour compounds. Fermentation time (typically 48–120 hours) greatly influences the fruitiness and complexity of the whisky. Flavour compounds such as esters are generated at this stage."
+    },
+    {
+      "id": "distillation",
+      "termJa": "蒸溜",
+      "termEn": "Distillation",
+      "category": "production",
+      "definitionJa": "ウォッシュ（発酵液）を加熱して蒸気を発生させ、冷却して高アルコール液体（ニューメイク）を得る過程。スコッチシングルモルトは通常2回蒸溜し、一部は3回蒸溜する。蒸溜カットポイントがウィスキーのキャラクターを決定する重要な判断。",
+      "definitionEn": "The process of heating the wash (fermented liquid) to produce vapour, then cooling it to obtain a high-ABV liquid (new make). Scotch single malt is typically distilled twice; some are triple-distilled. The distillation cut points are a critical judgement that shapes the whisky's character."
+    }
+  ]
+}
